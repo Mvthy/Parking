@@ -14,6 +14,7 @@ import { IntroComponent } from './Page/intro/intro.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HomeComponent } from './Page/home/home.component';
 import { RegistrarComponent } from './Page/registrar/registrar.component';
+import { RecuperarComponent } from './Page/recuperar/recuperar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegistrarComponent } from './Page/registrar/registrar.component';
     LoginComponent,
     IntroComponent,
     HomeComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    RecuperarComponent
   ],
   imports: [
     BrowserModule,

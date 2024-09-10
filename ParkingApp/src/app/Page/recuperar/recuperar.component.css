@@ -1,0 +1,65 @@
+.example-form {
+    min-width: 150px;
+    max-width: 300px;
+    width: 63%;
+  }
+  
+  .example-full-width {
+    width: 50%;
+  }
+
+  /* home.component.css */
+.title-container {
+    margin-top: 35%;
+    text-align: center;
+  }
+  
+  .title-container h1 {
+    margin: 0;
+  }
+  
+  .title-container h2 {
+    margin: 0;
+    color: gray; /* Cambia el color si lo deseas */
+  }
+
+  /* home.component.css o styles.css */
+.example-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espacio entre los campos del formulario */
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    padding: 20px; /* Espacio interno opcional */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    background-color: #fff; /* Fondo opcional */
+    border-radius: 8px; /* Bordes redondeados opcional */
+  }
+  
+  .example-full-width {
+    width: 100%; /* Asegura que los campos del formulario ocupen el ancho completo */
+  }
+
+  /* home.component.css o styles.css */
+.signup-link {
+    margin-top: 16px;
+    text-align: center;
+  }
+  
+  .signup-link a {
+    color: #007bff; /* Azul para el enlace */
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+  button {
+    margin-left: 13%;
+    width: 200px;
+  }
+
+  .example-label {
+    margin-left: 23%;
+  }
