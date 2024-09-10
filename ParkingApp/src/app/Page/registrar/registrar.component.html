@@ -1,1 +1,38 @@
-<p>registrar works!</p>
+<div class="title-container">
+    <h1>Registro</h1>
+  </div>
+
+<form class="example-form">
+
+    <mat-form-field class="Nombre">
+      <mat-label>Nombre</mat-label>
+      <input matInput type="name" name="name">
+    </mat-form-field>
+  
+    <mat-form-field class="User">
+        <mat-label>Usuario</mat-label>
+        <input matInput type="user" name="user">
+      </mat-form-field>
+
+    <mat-form-field class="Email">
+      <mat-label>Correo electronico</mat-label>
+      <input matInput type="email" name="email">
+    </mat-form-field>
+
+    <mat-form-field class="Password">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" name="password">
+      </mat-form-field>
+
+    <mat-form-field class="validatePassword">
+      <mat-label>Confirmar contraseña</mat-label>
+      <input matInput type="validatePassword" name="validatePassword">
+    </mat-form-field> 
+    
+    <div class="mat-flat-button">
+        <button mat-flat-button routerLink="/login">Registrarse</button>
+    </div>
+
+</form>
+
+
