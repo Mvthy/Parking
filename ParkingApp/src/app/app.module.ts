@@ -13,13 +13,15 @@ import { LoginComponent } from './Page/login/login.component';
 import { IntroComponent } from './Page/intro/intro.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HomeComponent } from './Page/home/home.component';
+import { RegistrarComponent } from './Page/registrar/registrar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     IntroComponent,
-    HomeComponent
+    HomeComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,
