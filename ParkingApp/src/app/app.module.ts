@@ -12,12 +12,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './Page/login/login.component';
 import { IntroComponent } from './Page/intro/intro.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HomeComponent } from './Page/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    IntroComponent
+    IntroComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
