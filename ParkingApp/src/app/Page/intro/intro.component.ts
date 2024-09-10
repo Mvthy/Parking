@@ -10,6 +10,6 @@ export class IntroComponent {
   constructor(public router: Router) {
     setTimeout(() => {
       this.router.navigateByUrl('login')
-    }, 4000);
+    }, 2500);
   }
 }
