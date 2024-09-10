@@ -4,21 +4,30 @@
   </div>
   
   <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Usuario</mat-label>
-      <input matInput placeholder="thalia perez ">
+    <mat-form-field class="Usuario">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" name="email">
     </mat-form-field>
   
-    <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      <textarea matInput placeholder="12345"></textarea>
+    <mat-form-field class="Password">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" name="Password">
     </mat-form-field>
   
-    
+    <div class="mat-flat-button">
+      <button type="submit" mat-flat-button>Ingresar</button>
+    </div>
+
+    <div class="example-label">¿No tienes cuenta?</div>
+    <div class="example-button-row">
+      <a mat-stroked-button routerLink="registrar" target="_blank">Registrate aquí</a>
+    </div>
+
     <!-- Enlace Recuperar contraseña -->
     <div class="signup-link">
-      <a routerLink="/Recuperar">Recupera tu contraseña</a>
+      <a routerLink="/recuperar">Recupera tu contraseña</a>
     </div>
+
   </form>
   
   

@@ -1,15 +1,16 @@
 .example-form {
     min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+    max-width: 300px;
+    width: 63%;
   }
   
   .example-full-width {
-    width: 100%;
+    width: 50%;
   }
 
   /* home.component.css */
 .title-container {
+    margin-top: 35%;
     text-align: center;
   }
   
@@ -54,5 +55,7 @@
     text-decoration: underline;
   }
   
-  
-  
+  button {
+    margin-left: 13%;
+    width: 200px;
+  }
