@@ -15,6 +15,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HomeComponent } from './Page/home/home.component';
 import { RegistrarComponent } from './Page/registrar/registrar.component';
 import { RecuperarComponent } from './Page/recuperar/recuperar.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RecuperarComponent } from './Page/recuperar/recuperar.component';
     MatButtonModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule 
   ],
   providers: [
     provideClientHydration(),

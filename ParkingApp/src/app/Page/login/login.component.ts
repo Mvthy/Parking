@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +8,25 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  usuario: string = '';
+  clave: string = '';
+  attemptedLogin: boolean = false;
 
   constructor(private router: Router) { }
 
-  ingresar() {
-    // Lógica de autenticación (puedes agregar la verificación de usuario aquí)
+  // Función para validar los campos y realizar el inicio de sesión
+  login() {
+    this.attemptedLogin = true;
+
+  // Si los campos son válidos (usuario y clave correctos), navegar a home
+  if (this.usuario && this.clave.length >= 6) {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        usuariologin: this.usuario //envia el usuario del input de usuario a la pagina Home
+      }
+    };
+  
     this.router.navigate(['/home']); // Redirecciona a la página Home
   }
-
+  }
 }
-
-export class InputOverviewExample {}

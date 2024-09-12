@@ -9,34 +9,31 @@ import { RecuperarComponent } from './Page/recuperar/recuperar.component';
 const routes: Routes = [
 
   {
-    path: 'login',
+    path: 'login', //Ruta login
     component: LoginComponent
   },
 
   {
-    path: 'home',
+    path: 'home', //Ruta home
     component: HomeComponent
   },
 
   {
-    path: 'registrar',
+    path: 'registrar', //Ruta registrar usuario
     component: RegistrarComponent
   },
 
   {
-    path: 'recuperar',
+    path: 'recuperar', //Ruta recuperar contraseña
     component: RecuperarComponent
   },
 
   {
-    path: 'intro',
+    path: 'intro', //Ruta intro
     component: IntroComponent
   }
 
-
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
