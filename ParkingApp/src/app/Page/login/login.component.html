@@ -5,6 +5,7 @@
   
   <form class="example-form">
 
+    <!-- Input de usuario -->
     <mat-form-field appearance="fill">
       <mat-label>Usuario</mat-label>
       <input matInput [(ngModel)]="usuario" required />
@@ -14,7 +15,8 @@
     <p *ngIf="attemptedLogin && !usuario" style="color: rgba(255, 0, 0, 0.632);">
       Usuario es obligatorio.
     </p>
-  
+    
+    <!-- Input de clave -->
     <mat-form-field appearance="fill">
       <mat-label>Contraseña</mat-label>
       <input matInput  [(ngModel)]="clave" type="password" required />

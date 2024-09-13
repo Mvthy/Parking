@@ -26,7 +26,7 @@ export class LoginComponent {
       }
     };
   
-    this.router.navigate(['/home']); // Redirecciona a la página Home
+    this.router.navigate(['/home'], navigationExtras); // Redirecciona a la página Home
   }
   }
 }
