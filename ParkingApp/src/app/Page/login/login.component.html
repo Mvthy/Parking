@@ -8,7 +8,7 @@
     <!-- Input de usuario -->
     <mat-form-field appearance="fill">
       <mat-label>Usuario</mat-label>
-      <input matInput [(ngModel)]="usuario" required />
+      <input matInput [(ngModel)]="usuario" name="usuario" required />
     </mat-form-field>
    
     <!-- Validación para el input de usuario en blanco -->
@@ -19,7 +19,7 @@
     <!-- Input de clave -->
     <mat-form-field appearance="fill">
       <mat-label>Contraseña</mat-label>
-      <input matInput  [(ngModel)]="clave" type="password" required />
+      <input matInput  [(ngModel)]="clave" name="clave" type="password" required />
     </mat-form-field>
     
     <!-- Validación para el input de clave en blanco -->
