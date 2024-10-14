@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './Page/login/login.component';
 import { IntroComponent } from './Page/intro/intro.component';
-import { HomeComponent } from './Page/home/home.component';
+
 import { RegistrarComponent } from './Page/registrar/registrar.component';
 import { RecuperarComponent } from './Page/recuperar/recuperar.component';
 
@@ -10,12 +9,12 @@ const routes: Routes = [
 
   {
     path: 'login', //Ruta login
-    component: LoginComponent
+    loadChildren: () => import('./Page/login/login.module').then(m => m.LoginModule) // lazy loading del modulo login
   },
 
   {
     path: 'home', //Ruta home
-    component: HomeComponent
+    loadChildren: () => import('./Page/home/home.module').then(m => m.HomeModule) // lazy loading del modulo home
   },
 
   {
