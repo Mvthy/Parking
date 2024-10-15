@@ -19,6 +19,9 @@ import { RegistrarComponent } from './Page/registrar/registrar.component';
 import { RecuperarComponent } from './Page/recuperar/recuperar.component';
 import { MatCardModule } from '@angular/material/card';
 
+import { AngularFireModule} from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,8 @@ import { MatCardModule } from '@angular/material/card';
     MatNativeDateModule,
     MatDatepickerModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig), //Iniciar firebase con la configuracion del entorno
   ],
 
   providers: [
