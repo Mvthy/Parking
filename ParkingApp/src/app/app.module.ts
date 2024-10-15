@@ -22,6 +22,9 @@ import { MatCardModule } from '@angular/material/card';
 import { AngularFireModule} from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 
+//Importa un servicio personalizado para CRUD en Firebase
+import { CrudFirebaseService } from './servicios/crudfirebase.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +49,8 @@ import { environment } from '../environments/environment';
 
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    CrudFirebaseService // Proveedor del servicio CRUD para firebase
   ],
 
   bootstrap: [AppComponent]

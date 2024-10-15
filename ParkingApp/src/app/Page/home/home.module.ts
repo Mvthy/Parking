@@ -17,6 +17,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CertificacionesComponent } from '../../componentes/certificaciones/certificaciones.component';
 import { ExperienciaLaboralComponent } from '../../componentes/experiencia-laboral/experiencia-laboral.component';
 import { MisDatosComponent } from '../../componentes/mis-datos/mis-datos.component';
+import { UsuariosfirebaseComponent } from '../../componentes/usuariosfirebase/usuariosfirebase.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, //ruta para el componente home
@@ -27,6 +28,7 @@ const routes: Routes = [
     ExperienciaLaboralComponent,
     CertificacionesComponent,
     MisDatosComponent,
+    UsuariosfirebaseComponent,
   ],
   imports: [
     CommonModule,
