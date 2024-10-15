@@ -7,6 +7,7 @@ import { AuthGuard } from './guard/auth.guard';
 
 import { RegistrarComponent } from './Page/registrar/registrar.component';
 import { RecuperarComponent } from './Page/recuperar/recuperar.component';
+import { Pagina404Component } from './Page/pagina404/pagina404.component';
 
 const routes: Routes = [
 
@@ -34,8 +35,17 @@ const routes: Routes = [
   {
     path: 'intro', //Ruta intro
     component: IntroComponent
-  }
+  },
 
+  {
+    path: 'pagina404', //ruta pagina404
+    loadChildren: () => import('./Page/pagina404/pagina404.module').then(m => m.Pagina404Module) // Lazy loading del módulo Pagina404
+  },
+
+  {
+    path: '**',
+    component: Pagina404Component
+  },
 ];
 
 @NgModule({

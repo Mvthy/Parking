@@ -27,6 +27,8 @@ import { CrudFirebaseService } from './servicios/crudfirebase.service';
 
 //Importar Authentication de Firebase
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { Pagina404Component } from './Page/pagina404/pagina404.component';
+import { Pagina404Module } from './Page/pagina404/pagina404.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     IntroComponent,
     RegistrarComponent,
     RecuperarComponent,
+    Pagina404Component,
   ],
 
   imports: [
@@ -48,7 +51,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     BrowserAnimationsModule,
     MatCardModule,
     AngularFireModule.initializeApp(environment.firebaseConfig), //Iniciar firebase con la configuracion del entorno
-    AngularFireAuthModule
+    AngularFireAuthModule, Pagina404Module
   ],
 
   providers: [
