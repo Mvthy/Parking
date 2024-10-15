@@ -25,6 +25,9 @@ import { environment } from '../environments/environment';
 //Importa un servicio personalizado para CRUD en Firebase
 import { CrudFirebaseService } from './servicios/crudfirebase.service';
 
+//Importar Authentication de Firebase
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +48,7 @@ import { CrudFirebaseService } from './servicios/crudfirebase.service';
     BrowserAnimationsModule,
     MatCardModule,
     AngularFireModule.initializeApp(environment.firebaseConfig), //Iniciar firebase con la configuracion del entorno
+    AngularFireAuthModule
   ],
 
   providers: [

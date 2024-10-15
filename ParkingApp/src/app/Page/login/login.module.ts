@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { RouterModule, Routes } from '@angular/router';
 
-import { FormsModule } from '@angular/forms'; // Importar FormsModule
-// Importa los módulos necesarios de Angular Material
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+//Líbrerías de Angular Material
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import { MatIconButton } from '@angular/material/button';
 
 const routes: Routes = [
   { path: '', component: LoginComponent }, //ruta para el componente login
@@ -17,11 +19,13 @@ const routes: Routes = [
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes), //configura lazy loading con routermodele.forchild
-    FormsModule, // Asegúrate de agregar FormsModule aquí
-    MatFormFieldModule, // Asegúrate de importar estos módulos
+    RouterModule.forChild(routes), // Configura lazy loading con RouterModule.forChild
     MatInputModule,
-    MatButtonModule
+    MatFormFieldModule,
+    MatButtonModule,
+    MatCardModule,
+    FormsModule,
+    MatIconButton
   ]
 })
 export class LoginModule { }
