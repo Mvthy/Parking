@@ -30,6 +30,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { Pagina404Component } from './Page/pagina404/pagina404.component';
 import { Pagina404Module } from './Page/pagina404/pagina404.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,9 @@ import { Pagina404Module } from './Page/pagina404/pagina404.module';
     BrowserAnimationsModule,
     MatCardModule,
     AngularFireModule.initializeApp(environment.firebaseConfig), //Iniciar firebase con la configuracion del entorno
-    AngularFireAuthModule, Pagina404Module
+    AngularFireAuthModule, 
+    Pagina404Module,
+    HttpClientModule,
   ],
 
   providers: [

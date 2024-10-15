@@ -12,12 +12,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatLabel } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatListModule } from '@angular/material/list';
 
 //Importar componentes que usas en el home.component.html
 import { CertificacionesComponent } from '../../componentes/certificaciones/certificaciones.component';
 import { ExperienciaLaboralComponent } from '../../componentes/experiencia-laboral/experiencia-laboral.component';
 import { MisDatosComponent } from '../../componentes/mis-datos/mis-datos.component';
 import { UsuariosfirebaseComponent } from '../../componentes/usuariosfirebase/usuariosfirebase.component';
+import { ApiRestComponent } from '../../componentes/api-rest/api-rest.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, //ruta para el componente home
@@ -29,6 +33,7 @@ const routes: Routes = [
     CertificacionesComponent,
     MisDatosComponent,
     UsuariosfirebaseComponent,
+    ApiRestComponent,
   ],
   imports: [
     CommonModule,
@@ -38,9 +43,11 @@ const routes: Routes = [
     MatFormField,
     MatInputModule,
     MatLabel,
+    MatListModule,
     FormsModule,
     MatButtonToggleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ]
 })
 export class HomeModule { }
