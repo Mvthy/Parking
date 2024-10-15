@@ -1,4 +1,32 @@
-
-<mat-card *ngIf="usuariohome"> <!--Desplegar el mensaje de bienvenida con el nombre del usuario-->
-    <mat-card-title>Bienvenida/o {{ usuariohome }}</mat-card-title>
-</mat-card>
+<div>
+    <mat-card *ngIf="usuariohome"> <!--Desplegar el mensaje de bienvenida con el nombre del usuario-->
+      <mat-card-title>Bienvenida/o {{ usuariohome }}</mat-card-title>
+    </mat-card>
+  </div>
+  <br>
+      <!-- Segmento usando Angular Material -->
+      <mat-button-toggle-group [(ngModel)]="selectedSegment">
+          <mat-button-toggle value="mis-datos">
+          Mis Datos
+          </mat-button-toggle>
+          <mat-button-toggle value="experiencia-laboral">
+          Experiencia Laboral
+          </mat-button-toggle>
+          <mat-button-toggle value="certificaciones">
+          Certificaciones
+          </mat-button-toggle>>
+      </mat-button-toggle-group>
+      <!-- Mostrar componentes según el valor seleccionado en el segmento -->
+      <ng-container *ngIf="selectedSegment === 'mis-datos'">
+          <app-mis-datos></app-mis-datos>
+      </ng-container>
+      <ng-container *ngIf="selectedSegment === 'experiencia-laboral'">
+          <app-experiencia-laboral></app-experiencia-laboral>
+      </ng-container>
+      <ng-container *ngIf="selectedSegment === 'certificaciones'">
+          <app-certificaciones></app-certificaciones>
+      </ng-container>
+  
+   
+  
+   
