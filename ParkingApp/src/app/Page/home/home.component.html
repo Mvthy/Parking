@@ -21,6 +21,9 @@
         <mat-button-toggle value="api-rest">
             CRUD API REST (JSON)
         </mat-button-toggle>
+        <mat-button-toggle value="qr-scanner">
+            QR Scanner
+        </mat-button-toggle>
     </mat-button-toggle-group>
     <!-- Mostrar componentes según el valor seleccionado en el segmento -->
     <ng-container *ngIf="selectedSegment === 'mis-datos'">
@@ -37,6 +40,9 @@
     </ng-container>
     <ng-container *ngIf="selectedSegment === 'api-rest'">
         <app-api-rest></app-api-rest>
+    </ng-container>
+    <ng-container *ngIf="selectedSegment === 'qr-scanner'">
+        <app-qr-scanner></app-qr-scanner>
     </ng-container>
 
 

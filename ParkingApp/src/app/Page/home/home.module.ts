@@ -20,8 +20,12 @@ import { ExperienciaLaboralComponent } from '../../componentes/experiencia-labor
 import { MisDatosComponent } from '../../componentes/mis-datos/mis-datos.component';
 import { UsuariosfirebaseComponent } from '../../componentes/usuariosfirebase/usuariosfirebase.component';
 import { ApiRestComponent } from '../../componentes/api-rest/api-rest.component';
+import { QrScannerComponent } from '../../componentes/qr-scanner/qr-scanner.component';
 
 import { HttpClientModule } from '@angular/common/http';
+
+import { QRCodeModule } from 'angularx-qrcode'; // Nueva biblioteca para generar QR
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, //ruta para el componente home
@@ -34,6 +38,7 @@ const routes: Routes = [
     MisDatosComponent,
     UsuariosfirebaseComponent,
     ApiRestComponent,
+    QrScannerComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +53,8 @@ const routes: Routes = [
     MatButtonToggleModule,
     ReactiveFormsModule,
     HttpClientModule,
+    QRCodeModule, // Módulo para generar códigos QR
+    ZXingScannerModule // Módulo para escanear códigos QR
   ]
 })
 export class HomeModule { }

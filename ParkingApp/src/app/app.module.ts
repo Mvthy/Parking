@@ -31,6 +31,8 @@ import { Pagina404Component } from './Page/pagina404/pagina404.component';
 import { Pagina404Module } from './Page/pagina404/pagina404.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { QRCodeModule } from 'angularx-qrcode'; // Módulo para generar códigos QR
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireAuthModule, 
     Pagina404Module,
     HttpClientModule,
+    QRCodeModule,
+    ZXingScannerModule,
   ],
 
   providers: [
