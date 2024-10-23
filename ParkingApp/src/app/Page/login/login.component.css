@@ -1,65 +1,64 @@
-.example-form {
-    min-width: 150px;
-    max-width: 300px;
-    width: 63%;
-  }
-  
-  .example-full-width {
-    width: 50%;
-  }
+body, html {
+  height: 100%; /* Asegurar que el body y html ocupen toda la altura */
+  margin: 0; /* Sin márgenes */
+}
 
-  /* home.component.css */
-.title-container {
-    margin-top: 35%;
-    text-align: center;
-  }
-  
-  .title-container h1 {
-    margin: 0;
-  }
-  
-  .title-container h2 {
-    margin: 0;
-    color: gray; /* Cambia el color si lo deseas */
-  }
+.container {
+  display: flex; /* Usar flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100%; /* Ocupa toda la altura */
+}
 
-  /* home.component.css o styles.css */
-.example-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px; /* Espacio entre los campos del formulario */
-    max-width: 600px; /* Ancho máximo del formulario */
-    margin: 0 auto; /* Centra el formulario horizontalmente */
-    padding: 20px; /* Espacio interno opcional */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-    background-color: #fff; /* Fondo opcional */
-    border-radius: 8px; /* Bordes redondeados opcional */
-  }
-  
-  .example-full-width {
-    width: 100%; /* Asegura que los campos del formulario ocupen el ancho completo */
-  }
+mat-card {
+  max-width: 90%; /* Máximo 90% del ancho de la pantalla */
+  width: 400px; /* Ancho fijo para el mat-card */
+  margin: 20px; /* Margen alrededor del card */
+  padding: 20px; /* Espacio interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  background-color: #ffffff; /* Fondo blanco */
+}
 
-  /* home.component.css o styles.css */
-.signup-link {
-    margin-top: 16px;
-    text-align: center;
+mat-card-title {
+  font-size: 24px; /* Tamaño del título */
+  font-weight: bold; /* Negrita */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  color: #3f51b5; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+}
+
+mat-form-field {
+  width: 100%; /* Hacer que los campos de formulario ocupen todo el ancho */
+}
+
+input {
+  font-size: 16px; /* Tamaño de texto en inputs */
+}
+
+button {
+  width: 100%; /* Botón ocupa todo el ancho */
+  margin-top: 20px; /* Espacio encima del botón */
+  background-color: #3f51b5; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  font-size: 18px; /* Tamaño de texto en el botón */
+}
+
+button:hover {
+  background-color: #303f9f; /* Color al pasar el mouse */
+}
+
+/* Estilos adicionales para mejorar la visualización en móviles */
+@media (max-width: 600px) {
+  mat-card {
+    padding: 15px; /* Reducir padding en móviles */
   }
   
-  .signup-link a {
-    color: #007bff; /* Azul para el enlace */
-    text-decoration: none;
-  }
-  
-  .signup-link a:hover {
-    text-decoration: underline;
+  mat-card-title {
+    font-size: 20px; /* Ajustar tamaño del título en móviles */
   }
   
   button {
-    margin-left: 13%;
-    width: 200px;
+    font-size: 16px; /* Ajustar tamaño de texto del botón en móviles */
   }
-
-  .example-label {
-    margin-left: 23%;
-  }
+}
