@@ -1,0 +1,20 @@
+mat-button-toggle {
+    flex: 1;
+    margin: 4px;
+    padding: 12px;
+    border-radius: 25px;
+    background-color: #ffeb3b;
+    color: #333;
+    transition: transform 0.2s, background-color 0.3s;
+  }
+  
+  mat-button-toggle:hover {
+    background-color: #ffe082;
+    transform: translateY(-2px);
+  }
+  
+  mat-button-toggle.mat-button-toggle-checked {
+    background-color: #f44336;
+    color: white;
+  }
+  
