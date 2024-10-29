@@ -1,3 +1,35 @@
-<p>
-    mis-datos works!
-</p>
+<h3>Selección estacionamiento</h3>
+<div class="seats">
+  <div *ngFor="let row of seats">
+    <button
+      *ngFor="let seat of row"
+      [ngClass]="seat.status"
+      (click)="toggleSeat(seat)"
+      [disabled]="seat.status === 'occupied'"
+    >
+      {{ seat.id }}
+    </button>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item available">
+    <div></div>Disponible
+  </div>
+  <div class="legend-item occupied">
+    <div></div>Ocupado
+  </div>
+  <div class="legend-item selected">
+    <div></div>Seleccionado
+  </div>
+</div>
+
+<!-- Botón para reservar el asiento seleccionado -->
+<button (click)="reserveSeat()" [disabled]="!selectedSeat">
+  Reservar Asiento
+</button>
+
+<!-- Mensaje de éxito -->
+<div *ngIf="reservationMessage" class="reservation-message">
+  {{ reservationMessage }}
+</div>
