@@ -1,0 +1,25 @@
+<div class="ficha-auto">
+    <h2>Ficha del Automóvil</h2>
+    <div class="auto-details">
+      <label for="dueno">dueño:</label>
+      <input type="text" id="dueno" [(ngModel)]="auto.dueno" />
+
+      <label for="marca">Marca:</label>
+      <input type="text" id="marca" [(ngModel)]="auto.marca" />
+      
+      <label for="modelo">Modelo:</label>
+      <input type="text" id="modelo" [(ngModel)]="auto.modelo" />
+      
+      <label for="anio">Año:</label>
+      <input type="number" id="anio" [(ngModel)]="auto.anio" />
+      
+      <label for="color">Color:</label>
+      <input type="text" id="color" [(ngModel)]="auto.color" />
+      
+      <label for="matricula">Matrícula:</label>
+      <input type="text" id="matricula" [(ngModel)]="auto.matricula" />
+    </div>
+  
+    <button (click)="guardar()">Guardar Cambios</button>
+  </div>
+  
