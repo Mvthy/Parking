@@ -21,6 +21,9 @@ import { MisDatosComponent } from '../../componentes/mis-datos/mis-datos.compone
 import { UsuariosfirebaseComponent } from '../../componentes/usuariosfirebase/usuariosfirebase.component';
 import { ApiRestComponent } from '../../componentes/api-rest/api-rest.component';
 import { QrScannerComponent } from '../../componentes/qr-scanner/qr-scanner.component';
+import { DuenoComponent } from '../../componentes/dueno/dueno.component';
+import { FichaAutoComponent } from '../../componentes/ficha-auto/ficha-auto.component';
+import { EstacionamientoComponent } from '../../componentes/estacionamiento/estacionamiento.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -39,6 +42,9 @@ const routes: Routes = [
     UsuariosfirebaseComponent,
     ApiRestComponent,
     QrScannerComponent,
+    DuenoComponent,
+    FichaAutoComponent,
+    EstacionamientoComponent,
   ],
   imports: [
     CommonModule,
