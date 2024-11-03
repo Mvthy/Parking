@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   usuariohome: string = ''; //variable que recibe el dato del input usuario del componente Login
-  selectedSegment: string = 'mis-datos'; // Valor inicial para el segmento seleccionado
+  selectedSegment: string = 'estacionamiento'; // Valor inicial para el segmento seleccionado
 
   constructor(private route: ActivatedRoute) {
     // Obtenemos los queryParams al inicializar el componente
