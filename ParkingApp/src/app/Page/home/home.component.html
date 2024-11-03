@@ -6,6 +6,9 @@
 <br>
     <!-- Segmento usando Angular Material -->
     <mat-button-toggle-group [(ngModel)]="selectedSegment">
+        <mat-button-toggle value="dueno">
+            dueño
+        </mat-button-toggle>
         <mat-button-toggle value="estacionamiento">
             estacionamiento
         </mat-button-toggle>
@@ -32,6 +35,9 @@
         </mat-button-toggle>
     </mat-button-toggle-group>
     <!-- Mostrar componentes según el valor seleccionado en el segmento -->
+    <ng-container *ngIf="selectedSegment === 'dueno'">
+        <app-dueno></app-dueno>
+    </ng-container>
     <ng-container *ngIf="selectedSegment === 'estacionamiento'">
         <app-estacionamiento></app-estacionamiento>
     </ng-container>
