@@ -57,7 +57,7 @@ export class EstacionamientoComponent {
   reserveSeat(): void {
     if (this.selectedSeat) {
       this.selectedSeat.status = 'occupied'; // Cambiar el estado del asiento a ocupado
-      this.reservationMessage = `Asiento ${this.selectedSeat.id} reservado exitosamente!`; // Mensaje de éxito
+      this.reservationMessage = `Estacionamiento ${this.selectedSeat.id} reservado exitosamente!`; // Mensaje de éxito
       this.selectedSeat = null; // Limpiar la selección
     }
   }
