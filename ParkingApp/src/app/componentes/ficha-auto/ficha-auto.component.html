@@ -1,11 +1,20 @@
 <div class="ficha-auto">
     <h2>Ficha del Automóvil</h2>
     <div class="auto-details">
-      <label for="dueno">dueño:</label>
+      <label for="dueno">Dueño:</label>
       <input type="text" id="dueno" [(ngModel)]="auto.dueno" />
 
       <label for="marca">Marca:</label>
-      <input type="text" id="marca" [(ngModel)]="auto.marca" />
+      <input
+        type="text"
+        id="marca"
+        [(ngModel)]="auto.marca"
+        list="marcas"
+        (input)="filtrarMarcas()"
+      />
+      <datalist id="marcas">
+        <option *ngFor="let marca of marcasFiltradas" [value]="marca"></option>
+      </datalist>
       
       <label for="modelo">Modelo:</label>
       <input type="text" id="modelo" [(ngModel)]="auto.modelo" />
@@ -14,11 +23,26 @@
       <input type="number" id="anio" [(ngModel)]="auto.anio" />
       
       <label for="color">Color:</label>
-      <input type="text" id="color" [(ngModel)]="auto.color" />
-      
-      <label for="matricula">Matrícula:</label>
-      <input type="text" id="matricula" [(ngModel)]="auto.matricula" />
-    </div>
+    <input
+      type="text"
+      id="color"
+      [(ngModel)]="auto.color"
+      list="colores"
+      (input)="filtrarColores()"
+    />
+    <datalist id="colores">
+      <option *ngFor="let color of coloresFiltrados" [value]="color"></option>
+    </datalist>
+
+    <label for="matricula">Matrícula:</label>
+    <input
+      type="text"
+      id="matricula"
+      [(ngModel)]="auto.matricula"
+      maxlength="6"
+      (input)="validarMatricula()"
+    />
+  </div>
   
     <button (click)="guardar()">Guardar Cambios</button>
   </div>
