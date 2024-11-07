@@ -34,31 +34,33 @@ export class EstacionamientoComponent {
       { id: '4A', status: 'available' },
       { id: '4B', status: 'occupied' },
       { id: '4C', status: 'available' },
-      { id: '2D', status: 'available' },
+      { id: '4D', status: 'available' },
     ],
   ];
 
-  selectedSeat: Seat | null = null; // Guardar el asiento seleccionado
-  reservationMessage: string | null = null; // Mensaje de reserva
+  selectedSeat: Seat | null = null;
+  reservationMessage: string | null = null;
+  qrData: string = '';
 
   toggleSeat(seat: Seat): void {
     if (seat.status === 'available') {
       if (this.selectedSeat) {
-        this.selectedSeat.status = 'available'; // Revertir el estado del asiento previamente seleccionado
+        this.selectedSeat.status = 'available';
       }
       seat.status = 'selected';
-      this.selectedSeat = seat; // Actualizar el asiento seleccionado
+      this.selectedSeat = seat;
     } else if (seat.status === 'selected') {
-      seat.status = 'available'; // Deseleccionar el asiento
-      this.selectedSeat = null; // Limpiar la selección
+      seat.status = 'available';
+      this.selectedSeat = null;
     }
   }
 
   reserveSeat(): void {
     if (this.selectedSeat) {
-      this.selectedSeat.status = 'occupied'; // Cambiar el estado del asiento a ocupado
-      this.reservationMessage = `Estacionamiento ${this.selectedSeat.id} reservado exitosamente!`; // Mensaje de éxito
-      this.selectedSeat = null; // Limpiar la selección
+      this.selectedSeat.status = 'occupied';
+      this.reservationMessage = `Estacionamiento ${this.selectedSeat.id} reservado exitosamente!`;
+      this.qrData = `Reservado: Estacionamiento ${this.selectedSeat.id}`;
+      this.selectedSeat = null;
     }
   }
 }

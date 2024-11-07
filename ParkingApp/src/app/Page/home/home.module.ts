@@ -20,7 +20,6 @@ import { ExperienciaLaboralComponent } from '../../componentes/experiencia-labor
 import { MisDatosComponent } from '../../componentes/mis-datos/mis-datos.component';
 import { UsuariosfirebaseComponent } from '../../componentes/usuariosfirebase/usuariosfirebase.component';
 import { ApiRestComponent } from '../../componentes/api-rest/api-rest.component';
-import { QrScannerComponent } from '../../componentes/qr-scanner/qr-scanner.component';
 import { DuenoComponent } from '../../componentes/dueno/dueno.component';
 import { FichaAutoComponent } from '../../componentes/ficha-auto/ficha-auto.component';
 import { EstacionamientoComponent } from '../../componentes/estacionamiento/estacionamiento.component';
@@ -41,7 +40,6 @@ const routes: Routes = [
     MisDatosComponent,
     UsuariosfirebaseComponent,
     ApiRestComponent,
-    QrScannerComponent,
     DuenoComponent,
     FichaAutoComponent,
     EstacionamientoComponent,

@@ -1,11 +1,14 @@
-
-<h1>Selección estacionamiento</h1>
+<h1>Selección de Estacionamiento</h1>
 
 <div class="seats">
   <div *ngFor="let row of seats">
     <button
       *ngFor="let seat of row"
-      [ngClass]="seat.status"
+      [ngClass]="{
+        'available': seat.status === 'available',
+        'occupied': seat.status === 'occupied',
+        'selected': seat.status === 'selected'
+      }"
       (click)="toggleSeat(seat)"
       [disabled]="seat.status === 'occupied'"
     >
@@ -34,4 +37,10 @@
 <!-- Mensaje de éxito -->
 <div *ngIf="reservationMessage" class="reservation-message">
   {{ reservationMessage }}
+</div>
+
+<!-- Código QR del asiento reservado -->
+<div *ngIf="reservationMessage">
+  <h3>Código QR del Asiento Reservado</h3>
+  <qrcode [qrdata]="qrData" [width]="200" [errorCorrectionLevel]="'M'"></qrcode>
 </div>
