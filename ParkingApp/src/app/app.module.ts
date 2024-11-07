@@ -34,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { QRCodeModule } from 'angularx-qrcode'; // Módulo para generar códigos QR
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
+
 @NgModule({
   declarations: [
     AppComponent,

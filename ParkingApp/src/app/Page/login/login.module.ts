@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { MatIconButton } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   { path: '', component: LoginComponent }, //ruta para el componente login
@@ -25,7 +26,8 @@ const routes: Routes = [
     MatButtonModule,
     MatCardModule,
     FormsModule,
-    MatIconButton
+    MatIconButton,
+    MatIconModule
   ]
 })
 export class LoginModule { }

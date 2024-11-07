@@ -1,34 +1,53 @@
-<mat-card>
-  <mat-card-title>Iniciar sesión</mat-card-title>
-  
-  <form (submit)="login()">
-    <!-- Input de usuario -->
-  <mat-form-field appearance="fill">
-    <mat-label>Usuario</mat-label>
-    <input matInput [(ngModel)]="usuario" name="usuario" type="text" required />
-    <!-- Validación para el input de usuario en blanco -->
-    <mat-error *ngIf="errors.includes('Usuario es reqerido')" style="color: rgba(255, 0, 0, 0.632);"> 
-      Usuario es requerido
-    </mat-error>
-  </mat-form-field>
-  <br>
-  <!-- Input de clave -->
-  <mat-form-field appearance="fill">
-    <mat-label>Clave</mat-label>
-    <input matInput [(ngModel)]="clave" name="clave" type="password" required minlength="6" />
-    <!-- Validación para el input de clave en blanco -->
-    <mat-error *ngIf="errors.includes('Clave es requerida')" style="color: rgba(255, 0, 0, 0.632);">
-      Clave es requerida
-    </mat-error>
-    <!-- Validación para el input de clave con un mínimo 6 caracteres -->
-    <mat-error *ngIf="errors.includes('La clave debe contener más de 6 carácteres')" style="color: rgba(255, 0, 0, 0.632);">
-      La clave debe contener más de 6 carácteres
-    </mat-error>
-  </mat-form-field>
-  <br>
-  <br>
-  <br>
-  <!-- Botón para iniciar sesión -->
-  <button mat-raised-button color="primary" type="submit">Iniciar Sesión</button>
-  </form>
-</mat-card>
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="container">
+      <mat-card> 
+        <!-- imagen -->
+        <img src="Logo.png" alt="Logo" class="logo">
+
+        <form (ngSubmit)="login()">
+          <mat-card-content>
+            <mat-card-title>Iniciar sesión</mat-card-title>
+    
+            <!-- Input de usuario -->
+            <mat-form-field appearance="fill">
+              <mat-label><mat-icon>person</mat-icon> Usuario</mat-label>
+              <input matInput type="text" [(ngModel)]="usuario" name="usuario" placeholder="Introduce tu nombre de usuario" required />
+                <!-- Validación para el input de usuario en blanco -->
+                <mat-error *ngIf="errors.includes('Usuario es reqerido')" style="color: rgba(255, 0, 0, 0.632);"> 
+                  Usuario es requerido
+                </mat-error>
+            </mat-form-field>
+            <br>
+
+            <!-- Input de clave -->
+            <mat-form-field appearance="fill">
+              <mat-label><mat-icon>lock</mat-icon> Contraseña</mat-label>
+              <input matInput type="password" [(ngModel)]="clave" name="clave" placeholder="Introduce tu contraseña" required minlength="6"/>
+                <!-- Validación para el input de clave en blanco -->
+                <mat-error *ngIf="errors.includes('Clave es requerida')" style="color: rgba(255, 0, 0, 0.632);">
+                  Clave es requerida
+                </mat-error>
+                <!-- Validación para el input de clave con un mínimo 6 caracteres -->
+                <mat-error *ngIf="errors.includes('La clave debe contener más de 6 carácteres')" style="color: rgba(255, 0, 0, 0.632);">
+                  La clave debe contener más de 6 carácteres
+                </mat-error>
+            </mat-form-field>
+            
+            <!-- Botones -->
+            <section>
+              <div class="button-container">
+                <div class="button-row">
+                  <button mat-raised-button class="iniciar-button" color="primary" (click)="login()">Iniciar Sesión</button>
+                  <button mat-raised-button class="otros-button" (click)="registrar()">Registrar usuario</button>
+                  <button mat-raised-button class="otros-button" (click)="recuperar()">Recuperar contraseña</button>
+                </div>
+              </div>
+            </section>
+          </mat-card-content>
+        </form>
+      </mat-card>
+    </div>
+  </body>
+</html>

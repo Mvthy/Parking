@@ -6,7 +6,7 @@ import { Router, NavigationExtras } from '@angular/router';
 import { AuthService } from '../../servicios/auth.service';
 
 @Component({
-  //selector: 'app-login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -34,6 +34,12 @@ export class LoginComponent {
     alert('Por favor, ingresa tu correo y contraseña.');
   }
   }
+
+  registrar() {
+    this.router.navigate(['/registrar']);}
+
+  recuperar() {
+    this.router.navigate(['/recuperar']);}
  
   ngOnInit() {
   }
