@@ -47,14 +47,6 @@
   
   /*----------Botones----------*/
   
-  .iniciar-button {
-    margin-top: 20px;
-    width: 100%; /* Botón ocupa todo el ancho */
-    font-size: 18px; /* Tamaño de texto en el botón */
-    text-align: center; /* Centrar el texto */
-  }
-  
-  
   button {
     width: 50%; /* Botón ocupa todo el ancho */
     margin-top: 80px; /* Espacio encima del botón */

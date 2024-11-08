@@ -1,48 +1,51 @@
-// Importar el decorador Injectable de Angular, necesario para declarar servicios
 import { Injectable } from '@angular/core';
-// Importar AngularFireAuth para manejar autenticación con Firebase
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-// Importar Router para la navegación entre rutas de Angular
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CrudFirebaseService {
-  // Constructor que inyecta las dependencias AngularFireAuth y Router
   constructor(private afAuth: AngularFireAuth, private router: Router) {}
 
-// Método asíncrono para agregar un nuevo usuario a Firebase Authentication
+  // Método asíncrono para agregar un nuevo usuario a Firebase Authentication
   async addUser(email: string, password: string): Promise<void> {
     try {
-       // Crear un nuevo usuario con email y contraseña usando Firebase
+      // Intentamos crear un nuevo usuario con el correo y la contraseña proporcionados
       const userCredential = await this.afAuth.createUserWithEmailAndPassword(email, password);
       // Imprimir en consola la información del usuario creado
       console.log('Usuario agregado:', userCredential.user);
-    } catch (error: any) { // Hacer un casting del error a 'any'
-     // Imprimir en consola el error ocurrido al agregar el usuario
+      alert('¡Usuario registrado exitosamente!');
+    } catch (error: any) {
+      // Manejo de errores
       console.error('Error al agregar usuario:', error);
-      // Mostrar una alerta con el mensaje de error
-      alert('No se pudo agregar el usuario: ' + error.message);
+      if (error.code === 'auth/email-already-in-use') {
+        alert('Este correo ya está en uso, por favor elige otro.');
+      } else {
+        alert('Error al registrar usuario: ' + error.message);
+      }
     }
   }
 
   // Método asíncrono para eliminar al usuario autenticado actualmente
   async deleteUser(): Promise<void> {
     try {
-      // Obtener el usuario autenticado actualmente
+      // Obtener el usuario actualmente autenticado
       const user = await this.afAuth.currentUser;
       if (user) {
         // Eliminar el usuario actual si está autenticado
         await user.delete();
         // Imprimir en consola que el usuario ha sido eliminado
         console.log('Usuario eliminado');
-        // Mostrar una alerta confirmando la eliminación exitosa del usuario
+        // Confirmar la eliminación al usuario
         alert('Usuario eliminado exitosamente');
         // Redirigir al usuario a la página principal
         this.router.navigate(['/']);
+      } else {
+        alert('No hay un usuario autenticado para eliminar.');
       }
-    } catch (error: any) { // Hacer un casting del error a 'any'
+    } catch (error: any) {
+      // Manejo de errores
       console.error('Error al eliminar usuario:', error);
       alert('No se pudo eliminar el usuario: ' + error.message);
     }
@@ -60,8 +63,10 @@ export class CrudFirebaseService {
         // Si no existe usuario autenticado, devolver null
         return null;
       }
-    } catch (error: any) { // Hacer un casting del error a 'any'
+    } catch (error: any) {
+      // Manejo de errores
       console.error('Error al obtener usuario:', error);
+      alert('No se pudo obtener la información del usuario.');
       return null;
     }
   }
@@ -75,9 +80,10 @@ export class CrudFirebaseService {
       console.log('Sesión cerrada');
       // Redirigir al usuario a la página de login
       this.router.navigate(['/login']);
-    } catch (error: any) { // Hacer un casting del error a 'any'
-      // Imprimir en consola el error ocurrido al cerrar sesión
+    } catch (error: any) {
+      // Manejo de errores
       console.error('Error al cerrar sesión:', error);
+      alert('Error al cerrar sesión. Intenta de nuevo.');
     }
   }
 }

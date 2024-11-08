@@ -7,9 +7,6 @@
         <br>
           <!-- Segmento usando Angular Material -->
           <mat-button-toggle-group [(ngModel)]="selectedSegment">
-              <mat-button-toggle value="mis-datos">
-                  Mis datos
-              </mat-button-toggle>
               <mat-button-toggle value="estacionamiento">
                   Estacionamientos
               </mat-button-toggle>
@@ -35,9 +32,6 @@
           </ng-container>
           <ng-container *ngIf="selectedSegment === 'ficha-auto'">
               <app-ficha-auto></app-ficha-auto>
-          </ng-container>
-          <ng-container *ngIf="selectedSegment === 'mis-datos'">
-              <app-mis-datos></app-mis-datos>
           </ng-container>
           <ng-container *ngIf="selectedSegment === 'usuariosfirebase'">
               <app-usuariosfirebase></app-usuariosfirebase>

@@ -1,37 +1,33 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';  // Importar Router
+import { CrudFirebaseService } from '../../servicios/crudfirebase.service';
 
 @Component({
   selector: 'app-registrar',
   templateUrl: './registrar.component.html',
   styleUrls: ['./registrar.component.css']
 })
-export class RegistrarComponent {
-  usuario: string = '';
-  correo: string = '';
-  clave: string = '';
-  confirmarClave: string = '';
-  attemptedRegister: boolean = false;
+export class RegistrarComponent implements OnInit {
+  email: string = '';  // Variable para almacenar el correo electrónico ingresado por el usuario
+  password: string = '';  // Variable para almacenar la contraseña ingresada por el usuario
 
-  constructor(private router: Router) {}
+  constructor(private crudService: CrudFirebaseService, private router: Router) {}  // Inyección de Router
 
-  // Función de registro
-  registrar() {
-    this.attemptedRegister = true;
+  ngOnInit(): void { }
 
-    // Validación de campos
-    if (this.usuario && this.correo && this.clave && this.clave === this.confirmarClave) {
-
-      // Redirigir o mostrar mensaje de éxito si la validación pasa
-      alert('Registro exitoso');
-      this.router.navigate(['/login']);
+  // Método para agregar un nuevo usuario
+  async addUser() {
+    if (this.email && this.password) {  // Verifica si se ha ingresado un correo y una contraseña
+      await this.crudService.addUser(this.email, this.password);  // Llama al servicio para agregar un usuario
+      this.email = '';  // Limpia el campo de correo electrónico
+      this.password = '';  // Limpia el campo de contraseña
     } else {
-      alert('Por favor, completa todos los campos correctamente.');
+      alert('Por favor, ingresa un correo y contraseña.');  // Muestra un mensaje si faltan datos
     }
   }
 
-  // Función para volver al login
-  volver() {
-    this.router.navigate(['/login']);
+  // Método para redirigir a la página de Login
+  login() {
+    this.router.navigate(['/login']);  // Redirige al usuario a la página de login
   }
 }

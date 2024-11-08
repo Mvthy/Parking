@@ -15,7 +15,6 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatListModule } from '@angular/material/list';
 
 //Importar componentes que usas en el home.component.html
-import { MisDatosComponent } from '../../componentes/mis-datos/mis-datos.component';
 import { UsuariosfirebaseComponent } from '../../componentes/usuariosfirebase/usuariosfirebase.component';
 import { ApiRestComponent } from '../../componentes/api-rest/api-rest.component';
 import { DuenoComponent } from '../../componentes/dueno/dueno.component';
@@ -33,7 +32,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [HomeComponent,
-    MisDatosComponent,
     UsuariosfirebaseComponent,
     ApiRestComponent,
     DuenoComponent,

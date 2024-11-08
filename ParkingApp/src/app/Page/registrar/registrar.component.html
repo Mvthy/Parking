@@ -8,33 +8,23 @@
         <mat-card-content>
           <mat-card-title>Registro de Usuario</mat-card-title>
         
-          <!-- Nombre de Usuario -->
-          <mat-form-field appearance="fill">
-            <mat-label>Nombre de Usuario</mat-label>
-            <input matInput placeholder="Introduce tu nombre de usuario" [(ngModel)]="usuario" name="usuario" required>
-          </mat-form-field>
-        
           <!-- Correo Electrónico -->
           <mat-form-field appearance="fill">
             <mat-label>Correo Electrónico</mat-label>
-            <input matInput type="email" placeholder="Introduce tu correo" [(ngModel)]="correo" name="correo" required>
+            <input matInput [(ngModel)]="email" type="email" placeholder="Introduce tu correo" required>
           </mat-form-field>
-        
+
           <!-- Contraseña -->
           <mat-form-field appearance="fill">
             <mat-label>Contraseña</mat-label>
-            <input matInput type="password" placeholder="Introduce una contraseña" [(ngModel)]="clave" name="clave" required>
+            <input matInput type="password" placeholder="Introduce una contraseña" [(ngModel)]="password" name="clave" required>
           </mat-form-field>
-        
-          <!-- Confirmación de Contraseña -->
-          <mat-form-field appearance="fill">
-            <mat-label>Confirmar Contraseña</mat-label>
-            <input matInput type="password" placeholder="Reingresa la contraseña" [(ngModel)]="confirmarClave" name="confirmarClave" required>
-          </mat-form-field>
-        
+
           <!-- Botón de Registro -->
-          <button mat-raised-button (click)="registrar()">Registrar</button>
-          <button mat-raised-button (click)="volver()">Volver</button>
+          <button mat-raised-button (click)="addUser()">Agregar Usuario</button>
+
+          <!-- Botón de redirección a Login -->
+          <button mat-raised-button (click)="login()">Login</button>
         </mat-card-content>
       </mat-card>
     </div>
