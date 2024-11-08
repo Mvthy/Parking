@@ -6,7 +6,6 @@
     <tr>
       <th>Estacionamiento</th>
       <th>Nombre Dueño</th>
-      <th>Correo Electrónico</th>
       <th>Valor</th>
       <th>Disponibilidad</th>
     </tr>
@@ -15,7 +14,6 @@
     <tr *ngFor="let dueno of duenos">
       <td>{{ dueno.estacionamiento }}</td>
       <td>{{ dueno.nombre }}</td>
-      <td>{{ dueno.correo }}</td>
       <td>{{ dueno.valor | currency: 'CLP':'symbol':'1.0-0' }}</td>
       <td>{{ dueno.disponibilidad }}</td>
     </tr>
