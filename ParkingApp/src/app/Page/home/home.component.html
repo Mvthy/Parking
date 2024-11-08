@@ -1,49 +1,48 @@
-<div>
-  <mat-card *ngIf="usuariohome"> <!--Desplegar el mensaje de bienvenida con el nombre del usuario-->
-    <mat-card-title>Bienvenida/o {{ usuariohome }}</mat-card-title>
-  </mat-card>
-</div>
-<br>
-    <!-- Segmento usando Angular Material -->
-    <mat-button-toggle-group [(ngModel)]="selectedSegment">
-        <mat-button-toggle value="mis-datos">
-            Mis datos
-        </mat-button-toggle>
-        <mat-button-toggle value="estacionamiento">
-            Estacionamiento
-        </mat-button-toggle>
-        <mat-button-toggle value="dueno">
-            Dueños
-        </mat-button-toggle>
-            <mat-button-toggle value="ficha-auto">
-            Ficha auto
-        </mat-button-toggle>
-        <mat-button-toggle value="usuariosfirebase">
-            CRUD Usuarios Firebase
-        </mat-button-toggle>
-        <mat-button-toggle value="api-rest">
-            CRUD API REST (JSON)
-        </mat-button-toggle>
-    </mat-button-toggle-group>
-    <!-- Mostrar componentes según el valor seleccionado en el segmento -->
-    <ng-container *ngIf="selectedSegment === 'dueno'">
-        <app-dueno></app-dueno>
-    </ng-container>
-    <ng-container *ngIf="selectedSegment === 'estacionamiento'">
-        <app-estacionamiento></app-estacionamiento>
-    </ng-container>
-    <ng-container *ngIf="selectedSegment === 'ficha-auto'">
-        <app-ficha-auto></app-ficha-auto>
-    </ng-container>
-    <ng-container *ngIf="selectedSegment === 'mis-datos'">
-        <app-mis-datos></app-mis-datos>
-    </ng-container>
-    <ng-container *ngIf="selectedSegment === 'usuariosfirebase'">
-        <app-usuariosfirebase></app-usuariosfirebase>
-    </ng-container>
-    <ng-container *ngIf="selectedSegment === 'api-rest'">
-        <app-api-rest></app-api-rest>
-    </ng-container>
-
-
- 
+<html>
+    <div>
+        <mat-card *ngIf="usuariohome"> <!--Desplegar el mensaje de bienvenida con el nombre del usuario-->
+          <mat-card-title>Bienvenida/o {{ usuariohome }}</mat-card-title>
+        </mat-card>
+    </div>
+        <br>
+          <!-- Segmento usando Angular Material -->
+          <mat-button-toggle-group [(ngModel)]="selectedSegment">
+              <mat-button-toggle value="mis-datos">
+                  Mis datos
+              </mat-button-toggle>
+              <mat-button-toggle value="estacionamiento">
+                  Estacionamientos
+              </mat-button-toggle>
+              <mat-button-toggle value="dueno">
+                  Dueños
+              </mat-button-toggle>
+                  <mat-button-toggle value="ficha-auto">
+                  Registrar Automóvil
+              </mat-button-toggle>
+              <mat-button-toggle value="usuariosfirebase">
+                  CRUD Usuarios Firebase
+              </mat-button-toggle>
+              <mat-button-toggle value="api-rest">
+                  CRUD API REST (JSON)
+              </mat-button-toggle>
+          </mat-button-toggle-group>
+          <!-- Mostrar componentes según el valor seleccionado en el segmento -->
+          <ng-container *ngIf="selectedSegment === 'dueno'">
+              <app-dueno></app-dueno>
+          </ng-container>
+          <ng-container *ngIf="selectedSegment === 'estacionamiento'">
+              <app-estacionamiento></app-estacionamiento>
+          </ng-container>
+          <ng-container *ngIf="selectedSegment === 'ficha-auto'">
+              <app-ficha-auto></app-ficha-auto>
+          </ng-container>
+          <ng-container *ngIf="selectedSegment === 'mis-datos'">
+              <app-mis-datos></app-mis-datos>
+          </ng-container>
+          <ng-container *ngIf="selectedSegment === 'usuariosfirebase'">
+              <app-usuariosfirebase></app-usuariosfirebase>
+          </ng-container>
+          <ng-container *ngIf="selectedSegment === 'api-rest'">
+              <app-api-rest></app-api-rest>
+          </ng-container> 
+</html>
