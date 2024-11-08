@@ -1,1 +1,21 @@
-<h1>fichas dueños</h1>
+<h1>Fichas Dueños</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Estacionamiento</th>
+      <th>Nombre Dueño</th>
+      <th>Correo Electrónico</th>
+      <th>Valor</th>
+      <th>Disponibilidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dueno of duenos">
+      <td>{{ dueno.estacionamiento }}</td>
+      <td>{{ dueno.nombre }}</td>
+      <td>{{ dueno.correo }}</td>
+      <td>{{ dueno.valor | currency }}</td>
+      <td>{{ dueno.disponibilidad }}</td>
+    </tr>
+  </tbody>
+</table>
