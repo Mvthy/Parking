@@ -16,7 +16,7 @@
       <td>{{ dueno.estacionamiento }}</td>
       <td>{{ dueno.nombre }}</td>
       <td>{{ dueno.correo }}</td>
-      <td>{{ dueno.valor | currency }}</td>
+      <td>{{ dueno.valor | currency: 'CLP':'symbol':'1.0-0' }}</td>
       <td>{{ dueno.disponibilidad }}</td>
     </tr>
   </tbody>
