@@ -1,48 +1,50 @@
-<mat-toolbar color="primary">
-  <h2>Seleccion de estacionamiento</h2>
-</mat-toolbar>
-
-<div class="seats">
-  <div *ngFor="let row of seats">
-    <button
-      *ngFor="let seat of row"
-      [ngClass]="{
-        'available': seat.status === 'available',
-        'occupied': seat.status === 'occupied',
-        'selected': seat.status === 'selected'
-      }"
-      (click)="toggleSeat(seat)"
-      [disabled]="seat.status === 'occupied'"
-    >
-      {{ seat.id }}
-    </button>
+<html>
+  <mat-toolbar color="primary">
+    <h2>Seleccion de estacionamiento</h2>
+  </mat-toolbar>
+  
+  <div class="seats">
+    <div *ngFor="let row of seats">
+      <button
+        *ngFor="let seat of row"
+        [ngClass]="{
+          'available': seat.status === 'available',
+          'occupied': seat.status === 'occupied',
+          'selected': seat.status === 'selected'
+        }"
+        (click)="toggleSeat(seat)"
+        [disabled]="seat.status === 'occupied'"
+      >
+        {{ seat.id }}
+      </button>
+    </div>
   </div>
-</div>
-
-<div class="legend">
-  <div class="legend-item available">
-    <div></div>Disponible
+  
+  <div class="legend">
+    <div class="legend-item available">
+      <div></div>Disponible
+    </div>
+    <div class="legend-item occupied">
+      <div></div>Ocupado
+    </div>
+    <div class="legend-item selected">
+      <div></div>Seleccionado
+    </div>
   </div>
-  <div class="legend-item occupied">
-    <div></div>Ocupado
+  
+  <!-- Botón para reservar el asiento seleccionado -->
+  <button (click)="reserveSeat()" [disabled]="!selectedSeat">
+    Reservar estacionamiento
+  </button>
+  
+  <!-- Mensaje de éxito -->
+  <div *ngIf="reservationMessage" class="reservation-message">
+    {{ reservationMessage }}
   </div>
-  <div class="legend-item selected">
-    <div></div>Seleccionado
+  
+  <!-- Código QR del asiento reservado -->
+  <div *ngIf="reservationMessage">
+    <h3>Código QR del Asiento Reservado</h3>
+    <qrcode [qrdata]="qrData" [width]="200" [errorCorrectionLevel]="'M'"></qrcode>
   </div>
-</div>
-
-<!-- Botón para reservar el asiento seleccionado -->
-<button (click)="reserveSeat()" [disabled]="!selectedSeat">
-  Reservar estacionamiento
-</button>
-
-<!-- Mensaje de éxito -->
-<div *ngIf="reservationMessage" class="reservation-message">
-  {{ reservationMessage }}
-</div>
-
-<!-- Código QR del asiento reservado -->
-<div *ngIf="reservationMessage">
-  <h3>Código QR del Asiento Reservado</h3>
-  <qrcode [qrdata]="qrData" [width]="200" [errorCorrectionLevel]="'M'"></qrcode>
-</div>
+</html>

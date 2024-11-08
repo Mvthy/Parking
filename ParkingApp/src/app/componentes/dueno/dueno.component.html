@@ -1,21 +1,25 @@
-<mat-toolbar color="primary">
-  <h2>Tabla de Dueños</h2>
-</mat-toolbar>
-<table>
-  <thead>
-    <tr>
-      <th>Estacionamiento</th>
-      <th>Nombre Dueño</th>
-      <th>Valor</th>
-      <th>Disponibilidad</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let dueno of duenos">
-      <td>{{ dueno.estacionamiento }}</td>
-      <td>{{ dueno.nombre }}</td>
-      <td>{{ dueno.valor | currency: 'CLP':'symbol':'1.0-0' }}</td>
-      <td>{{ dueno.disponibilidad }}</td>
-    </tr>
-  </tbody>
-</table>
+<html>
+  <mat-toolbar color="primary">
+    <h2>Tabla de Dueños</h2>
+  </mat-toolbar>
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID Est.</th>
+          <th>Nombre Dueño</th>
+          <th>Valor</th>
+          <th>Disponibilidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dueno of duenos">
+          <td>{{ dueno.estacionamiento }}</td>
+          <td>{{ dueno.nombre }}</td>
+          <td>{{ dueno.valor | currency: 'CLP':'symbol':'1.0-0' }}</td>
+          <td>{{ dueno.disponibilidad }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</html>
