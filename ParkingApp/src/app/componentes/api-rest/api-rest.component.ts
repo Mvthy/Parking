@@ -1,16 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService, User } from '../../servicios/api-rest.service';
+import { DataService} from '../../servicios/api-rest.service';
+
+export interface User {
+  id: number;
+  name: string;
+  email: string;
+  comment?: string; // Campo opcional para el comentario
+}
 
 
 @Component({
   selector: 'app-api-rest',
   templateUrl: './api-rest.component.html',
-  styleUrl: './api-rest.component.css'
+  styleUrls: ['./api-rest.component.css']
 })
-export class ApiRestComponent implements OnInit{
+export class ApiRestComponent implements OnInit {
   users: User[] = [];
-  newUser: User = { id: 0, name: '', email: '' }; // Para el formulario de nuevo usuario
-  editingUser: User | null = null; // Para el usuario que se está editando
+  newUser: User = { id: 0, name: '', email: '', comment: '' }; // Incluye comentario
+  editingUser: User | null = null;
 
   constructor(private dataService: DataService) {}
 
@@ -20,62 +27,65 @@ export class ApiRestComponent implements OnInit{
 
   loadUsers() {
     this.dataService.getUsers().subscribe((users) => {
-      this.users = users; // Carga los usuarios desde el servicio
+      this.users = users;
     });
   }
 
   addUser() {
-    if (!this.newUser.name || !this.newUser.email) return; // Validación básica
+    if (!this.newUser.name || !this.newUser.email) return;
 
     const newUser: User = {
-      id: this.users.length > 0 ? Math.max(...this.users.map(u => u.id)) + 1 : 1, // Genera un ID único
+      id: this.users.length > 0 ? Math.max(...this.users.map(u => u.id)) + 1 : 1,
       name: this.newUser.name,
       email: this.newUser.email,
+      comment: this.newUser.comment // Captura el comentario
     };
 
     this.dataService.createUser(newUser).subscribe((user) => {
-      this.users.push(user); // Agrega el nuevo usuario a la lista
-      this.resetForm(); // Resetea el formulario
+      this.users.push(user);
+      this.resetForm();
     });
   }
 
   updateUser(user: User) {
-    this.editingUser = user; // Establece el usuario que se está editando
-    this.newUser.name = user.name; // Carga el nombre en el formulario
-    this.newUser.email = user.email; // Carga el email en el formulario
+    this.editingUser = user;
+    this.newUser.name = user.name;
+    this.newUser.email = user.email;
+    this.newUser.comment = user.comment || ''; // Carga el comentario en el formulario
   }
 
   saveUser() {
-    if (!this.editingUser) return; // Asegúrate de que hay un usuario en edición
+    if (!this.editingUser) return;
 
     const updatedUser: User = {
-      id: this.editingUser.id, // Usa el ID existente
+      id: this.editingUser.id,
       name: this.newUser.name,
       email: this.newUser.email,
+      comment: this.newUser.comment // Guarda el comentario actualizado
     };
 
     this.dataService.updateUser(updatedUser).subscribe((user) => {
       const index = this.users.findIndex(u => u.id === user.id);
       if (index !== -1) {
-        this.users[index] = user; // Actualiza el usuario en el array
+        this.users[index] = user;
       }
-      this.resetForm(); // Resetea el formulario
-      this.editingUser = null; // Limpia el usuario en edición
+      this.resetForm();
+      this.editingUser = null;
     }, (error) => {
-      console.error("Error al actualizar al ususario:", error); // Log de error
+      console.error("Error al actualizar al usuario:", error);
     });
   }
 
   deleteUser(userId: number) {
     this.dataService.deleteUser(userId).subscribe(() => {
-      this.users = this.users.filter(user => user.id !== userId); // Filtra el usuario eliminado
+      this.users = this.users.filter(user => user.id !== userId);
     }, (error) => {
-      console.error("Error al eliminar el usuario:", error); // Log de error
+      console.error("Error al eliminar el usuario:", error);
     });
   }
 
   resetForm() {
-    this.newUser = { id: 0, name: '', email: '' }; // Resetea el formulario
-    this.editingUser = null; // Limpia el usuario en edición
+    this.newUser = { id: 0, name: '', email: '', comment: '' };
+    this.editingUser = null;
   }
 }
