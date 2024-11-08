@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-
 /* ------------------ */
-
-
   body {
     font-family: 'Roboto', sans-serif;
   }
-  
   
   /* Centrado del contenedor principal con margen */
   .container {
@@ -37,23 +33,19 @@
     margin-bottom: 20px;
   }
   
-  
   /* Estilos de los elementos del formulario */
   mat-form-field {
     width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
   }
   
-  
-  
   /*----------Botones----------*/
-  
+
   button {
     width: 50%; /* Botón ocupa todo el ancho */
     margin-top: 80px; /* Espacio encima del botón */
     font-size: 18px; /* Tamaño de texto en el botón */
     text-align: center; /* Centrar el texto */
   }
-  
   
   /*----------Imagen----------*/
   .logo {

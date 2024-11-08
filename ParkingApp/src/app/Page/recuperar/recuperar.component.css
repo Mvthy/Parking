@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-
 /* ------------------ */
-
-
   body {
     font-family: 'Roboto', sans-serif;
   }
-
 
   /* Centrado del contenedor principal con margen */
   .container {
@@ -60,18 +56,6 @@
   display: block; /* Para que no haya espacio adicional debajo de la imagen */
   margin: auto; /* Centra la imagen si es necesario */
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .container {
   display: flex;

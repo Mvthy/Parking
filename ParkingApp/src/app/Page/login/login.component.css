@@ -4,7 +4,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-
 /* Centrado del contenedor principal con margen */
 .container {
   display: flex;
@@ -39,17 +38,13 @@ mat-form-field {
   width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
 }
 
-
-
 /*----------Botones----------*/
-
 .iniciar-button {
   margin-top: 20px;
   width: 100%; /* Botón ocupa todo el ancho */
   font-size: 18px; /* Tamaño de texto en el botón */
   text-align: center; /* Centrar el texto */
 }
-
 
 .otros-button {
   width: 50%; /* Botón ocupa todo el ancho */
@@ -59,7 +54,6 @@ mat-form-field {
   padding: 25px 0;
 }
 
-
 /*----------Imagen----------*/
 .logo {
   width: 150px; /* Cambia este valor según el tamaño que desees */
@@ -67,7 +61,3 @@ mat-form-field {
   display: block; /* Para que no haya espacio adicional debajo de la imagen */
   margin: auto; /* Centra la imagen si es necesario */
 }
-
-
-
-
