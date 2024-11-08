@@ -16,9 +16,6 @@
                   <mat-button-toggle value="ficha-auto">
                   Registrar Automóvil
               </mat-button-toggle>
-              <mat-button-toggle value="usuariosfirebase">
-                  CRUD Usuarios Firebase
-              </mat-button-toggle>
               <mat-button-toggle value="api-rest">
                   CRUD API REST (JSON)
               </mat-button-toggle>
@@ -32,9 +29,6 @@
           </ng-container>
           <ng-container *ngIf="selectedSegment === 'ficha-auto'">
               <app-ficha-auto></app-ficha-auto>
-          </ng-container>
-          <ng-container *ngIf="selectedSegment === 'usuariosfirebase'">
-              <app-usuariosfirebase></app-usuariosfirebase>
           </ng-container>
           <ng-container *ngIf="selectedSegment === 'api-rest'">
               <app-api-rest></app-api-rest>
