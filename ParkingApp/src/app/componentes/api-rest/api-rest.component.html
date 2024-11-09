@@ -1,6 +1,6 @@
 <html>
   <mat-toolbar color="primary">
-    <h2>Lista de Usuarios</h2>
+    <h2>Agrega tu comentario</h2>
   </mat-toolbar>
 
   <form (ngSubmit)="editingUser ? saveUser() : addUser()">
@@ -18,24 +18,6 @@
       {{ editingUser ? 'Guardar Cambios' : 'Enviar comentario' }}
     </button>
   </form>
-
-  <form (ngSubmit)="editingUser ? saveUser() : addUser()">
-    <mat-form-field appearance="fill">
-      <mat-label>Nombre</mat-label>
-      <input matInput [(ngModel)]="newUser.name" name="name" required>
-    </mat-form-field>
-  
-    <mat-form-field appearance="fill">
-      <mat-label>Comentario</mat-label>
-      <textarea matInput [(ngModel)]="newUser.comment" name="comment"></textarea>
-    </mat-form-field>
-  
-    <button mat-raised-button color="accent" type="submit">
-      {{ editingUser ? 'Guardar Cambios' : 'Enviar comentario' }}
-    </button>
-  </form>
-  
-  <br>
   
   <mat-list>
     <mat-list-item *ngFor="let user of users">
