@@ -13,7 +13,10 @@ import { AuthService } from '../../servicios/auth.service';
 export class LoginComponent {
   usuario: string = ''; // La variable de usuario
   clave: string = ''; // La variable de password
+  tipoUsuario: string = ''; // Tipo de usuario seleccionado
+  mostrarSelector: boolean = true; // Variable para mostrar/ocultar el selector de tipo de usuario
   errors: string[] = []; // Array para almacenar mensajes de error
+  
   constructor(private router: Router, private authService: AuthService) {} //Inicializar servicio auth
  
   // Llama al método de autenticación con correo y contraseña
