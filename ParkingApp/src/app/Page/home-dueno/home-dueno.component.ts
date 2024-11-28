@@ -14,7 +14,7 @@ export class HomeDuenoComponent implements OnInit {
   constructor(private route: ActivatedRoute) {
     // Obtenemos los queryParams al inicializar el componente
     this.route.queryParams.subscribe(params => {
-      this.usuariohome = params['user']; // Recibe el dato del input desde Login
+      this.usuariohome = params['usuario']; // Recibe el dato del input desde Login
       this.tipoUsuario = params['tipoUsuario'];
     });
   }

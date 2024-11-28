@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   usuariohome: string = ''; //variable que recibe el dato del input usuario del componente Login
@@ -14,8 +14,9 @@ export class HomeComponent implements OnInit {
   constructor(private route: ActivatedRoute) {
     // Obtenemos los queryParams al inicializar el componente
     this.route.queryParams.subscribe(params => {
-      this.usuariohome = params['user']; // Recibe el dato del input desde Login
-      this.tipoUsuario = params['tipoUsuario'];
+      // Verifica si el parámetro 'usuario' existe en los queryParams
+      this.usuariohome = params['usuario'] || ''; // Recibe el dato del input desde Login
+      this.tipoUsuario = params['tipoUsuario'] || ''; // Recibe el tipo de usuario
     });
   }
 
