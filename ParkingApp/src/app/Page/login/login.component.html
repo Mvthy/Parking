@@ -35,6 +35,20 @@
                 </mat-error>
             </mat-form-field>
             
+            <!-- Selector de tipo de usuario (si aplica) -->
+            <mat-form-field appearance="fill" *ngIf="mostrarSelector">
+              <mat-label>Seleccionar tipo de usuario</mat-label>
+              <mat-select [(value)]="tipoUsuario">
+                <mat-option value="arrendador">Arrendador</mat-option>
+                <mat-option value="dueno">Dueño</mat-option>
+                <mat-option value="administrador">Administrador</mat-option>
+              </mat-select>
+              <mat-error *ngIf="errors.includes('Seleccione un tipo de usuario')" style="color: rgba(255, 0, 0, 0.632);">
+                Seleccione un tipo de usuario
+              </mat-error>
+            </mat-form-field>
+            
+
             <!-- Botones -->
             <section>
               <div class="button-container">
