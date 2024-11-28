@@ -6,7 +6,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 // Importar tus componentes comunes
 import { ApiRestComponent } from '../../componentes/api-rest/api-rest.component';
 import { DuenoComponent } from '../../componentes/dueno/dueno.component';
-import { FichaAutoComponent } from '../../componentes/ficha-auto/ficha-auto.component';
 import { EstacionamientoComponent } from '../../componentes/estacionamiento/estacionamiento.component';
 
 //Líbrerías de Angular Material
@@ -25,7 +24,6 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
   declarations: [
     ApiRestComponent,
     DuenoComponent,
-    FichaAutoComponent,
     EstacionamientoComponent
   ],
   imports: [
@@ -47,7 +45,6 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
   exports: [
     ApiRestComponent,
     DuenoComponent,
-    FichaAutoComponent,
     EstacionamientoComponent,
   ]
 })
