@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home.component';
-import { SharedModule } from '../shared/shared.module'; // Importa SharedModule
+import { HomeArrendadorComponent } from './home-arrendador.component';
+import { SharedModule } from '../shared/shared.module';  // Importa SharedModule
 
 //Líbrerías de Angular Material
 import { MatCardModule } from '@angular/material/card';
@@ -18,13 +18,13 @@ import { MatListModule } from '@angular/material/list';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent // Ruta predeterminada para este módulo
+    component: HomeArrendadorComponent // Ruta predeterminada para este módulo
   }
 ];
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeArrendadorComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +38,6 @@ const routes: Routes = [
     MatListModule,
     FormsModule,
     MatButtonToggleModule,
-    
   ]
 })
-export class HomeModule { }
+export class HomeArrendadorModule { }

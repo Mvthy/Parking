@@ -1,38 +1,29 @@
-<html>
-    <div class="container">
-        <mat-card *ngIf="usuariohome"> <!--Desplegar el mensaje de bienvenida con el nombre del usuario-->
-          <mat-card-title>Bienvenida/o {{ usuariohome }}</mat-card-title>
-        </mat-card>
-    </div>
-    
-    <div class="container">
-        <!-- Segmento usando Angular Material -->
-      <mat-button-toggle-group [(ngModel)]="selectedSegment">
-        <mat-button-toggle value="estacionamiento">
-            Estacionamientos
-        </mat-button-toggle>
-        <mat-button-toggle value="dueno">
-            Dueños
-        </mat-button-toggle>
-            <mat-button-toggle value="ficha-auto">
-            Registrar Automóvil
-        </mat-button-toggle>
-        <mat-button-toggle value="api-rest">
-            Comentarios
-        </mat-button-toggle>
-        </mat-button-toggle-group>
-        <!-- Mostrar componentes según el valor seleccionado en el segmento -->
-        <ng-container *ngIf="selectedSegment === 'dueno'">
-            <app-dueno></app-dueno>
-        </ng-container>
-        <ng-container *ngIf="selectedSegment === 'estacionamiento'">
-            <app-estacionamiento></app-estacionamiento>
-        </ng-container>
-        <ng-container *ngIf="selectedSegment === 'ficha-auto'">
-            <app-ficha-auto></app-ficha-auto>
-        </ng-container>
-        <ng-container *ngIf="selectedSegment === 'api-rest'">
-            <app-api-rest></app-api-rest>
-        </ng-container> 
-    </div>    
-</html>
+<mat-button-toggle-group [(ngModel)]="selectedSegment">
+    <mat-button-toggle value="estacionamiento">
+      Estacionamientos
+    </mat-button-toggle>
+    <mat-button-toggle value="dueno">
+      Dueños
+    </mat-button-toggle>
+    <mat-button-toggle value="ficha-auto">
+      Registrar Automóvil
+    </mat-button-toggle>
+    <mat-button-toggle value="api-rest">
+      Comentarios
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  
+  <!-- Mostrar los componentes correspondientes dependiendo de la opción seleccionada -->
+  <ng-container *ngIf="selectedSegment === 'dueno'">
+    <app-dueno></app-dueno>
+  </ng-container>
+  <ng-container *ngIf="selectedSegment === 'estacionamiento'">
+    <app-estacionamiento></app-estacionamiento>
+  </ng-container>
+  <ng-container *ngIf="selectedSegment === 'ficha-auto'">
+    <app-ficha-auto></app-ficha-auto>
+  </ng-container>
+  <ng-container *ngIf="selectedSegment === 'api-rest'">
+    <app-api-rest></app-api-rest>
+  </ng-container>
+  

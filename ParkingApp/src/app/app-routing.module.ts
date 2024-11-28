@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IntroComponent } from './Page/intro/intro.component';
 
 //Importar guard
 import { AuthGuard } from './guard/auth.guard';
 
+import { IntroComponent } from './Page/intro/intro.component';
 import { RegistrarComponent } from './Page/registrar/registrar.component';
 import { RecuperarComponent } from './Page/recuperar/recuperar.component';
 import { Pagina404Component } from './Page/pagina404/pagina404.component';
+
 
 const routes: Routes = [
 
@@ -21,6 +22,15 @@ const routes: Routes = [
     loadChildren: () => import('./Page/home/home.module').then(m => m.HomeModule), // lazy loading del modulo home
     canActivate: [AuthGuard] //Protege la ruta Home
   },
+
+  { path: 'home/arrendador',
+    loadChildren: () => import('./Page/home-arrendador/home-arrendador.module').then(m => m.HomeArrendadorModule),
+    canActivate: [AuthGuard] 
+  },
+
+  { path: 'home/dueno',
+    loadChildren: () => import('./Page/home-dueno/home-dueno.module').then(m => m.HomeDuenoModule),
+    canActivate: [AuthGuard] },
 
   {
     path: 'registrar', //Ruta registrar usuario

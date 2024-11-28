@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home.component';
+import { HomeDuenoComponent } from './home-dueno.component';
 import { SharedModule } from '../shared/shared.module'; // Importa SharedModule
 
 //Líbrerías de Angular Material
@@ -18,13 +18,13 @@ import { MatListModule } from '@angular/material/list';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent // Ruta predeterminada para este módulo
+    component: HomeDuenoComponent // Ruta predeterminada para este módulo
   }
 ];
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeDuenoComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +38,6 @@ const routes: Routes = [
     MatListModule,
     FormsModule,
     MatButtonToggleModule,
-    
   ]
 })
-export class HomeModule { }
+export class HomeDuenoModule { }

@@ -20,22 +20,34 @@ export class LoginComponent {
   constructor(private router: Router, private authService: AuthService) {} //Inicializar servicio auth
  
   // Llama al método de autenticación con correo y contraseña
- async login() {
-  if (this.usuario && this.clave) {
-    const isAuthenticated = await this.authService.signIn(this.usuario, this.clave);
+  async login() {
+    this.errors = [];
     
-    // Solo navegamos si la autenticación fue exitosa
-    if (isAuthenticated) {
-      const navigationExtras: NavigationExtras = {
-        queryParams: {
-          user: this.usuario, // Envío dato del input Usuario
-        },
-      };
-      this.router.navigate(['/home'], navigationExtras); // Navega a Home y envía el dato del input Usuario
+    // Validaciones
+    if (!this.usuario) this.errors.push('Usuario es requerido');
+    if (!this.clave) this.errors.push('Clave es requerida');
+    if (!this.tipoUsuario) this.errors.push('Seleccione un tipo de usuario');
+    
+    if (this.errors.length === 0) {
+      // Llamada al servicio de autenticación
+      const isAuthenticated = await this.authService.signIn(this.usuario, this.clave);
+  
+      if (isAuthenticated) {
+        // Redirige según el tipo de usuario
+        switch (this.tipoUsuario) {
+          case 'arrendador':
+            this.router.navigate(['/home/arrendador']); // Redirige a la página home-arrendador
+            break;
+          case 'dueno':
+            this.router.navigate(['/home/dueno']); // Redirige a la página home-dueno
+            break;
+          case 'administrador':
+            this.router.navigate(['/home']); // Redirige a home-solo si el tipo no es reconocido
+        }
+      } else {
+        alert('Credenciales inválidas. Intente de nuevo.');
+      }
     }
-  } else {
-    alert('Por favor, ingresa tu correo y contraseña.');
-  }
   }
 
   registrar() {
