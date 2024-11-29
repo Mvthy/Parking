@@ -1,109 +1,109 @@
 /* Asegurarse de que el body tenga un margen y un relleno adecuado */
 body {
-    margin: 0; /* Elimina el margen predeterminado */
-    padding: 0; /* Elimina el relleno predeterminado */
-    font-family: 'Arial', sans-serif; /* Establecer una fuente adecuada */
-    background-color: #f4f4f4; /* Fondo suave */
-  }
-  
-  /* Contenedor principal que envuelve todo el contenido */
-  main {
-    padding: 20px; /* Espacio interior alrededor del contenido */
-    margin: 0 auto; /* Centra el contenedor si es necesario */
-    max-width: 1200px; /* Establece un ancho máximo para el contenido */
-  }
-  
-  /* Estilo adicional si deseas añadir espacio alrededor de un mat-button-toggle-group o cualquier otro elemento */
-  mat-button-toggle-group {
-    display: flex; /* Usar Flexbox para la disposición */
-    flex-direction:column;
-    padding: 10px;
-    margin-bottom: 20px; /* Espacio abajo */
-    border-radius: 10px;
-    background-color: #ffffff; /* Fondo blanco para el contenedor */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  }
-  
-  mat-button-toggle {
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: capitalize;
-    border-radius: 50px; /* Bordes más redondeados */
-    background-color: #f1f1f1; /* Fondo neutro */
-    color: #333;
-    border: 2px solid #ccc; /* Borde más claro */
-    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
-  }
-  
-  mat-button-toggle:hover {
-    background-color: #dcdcdc; /* Fondo al pasar el mouse */
-    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  }
-  
-  mat-button-toggle.mat-button-toggle-checked {
-    background-color: #2196f3; /* Fondo azul cuando está seleccionado */
-    color: white; /* Texto blanco cuando está seleccionado */
-    border-color: #1976d2; /* Borde azul más oscuro */
-  }
-  
-  mat-button-toggle.mat-button-toggle-checked:hover {
-    background-color: #1976d2; /* Fondo más oscuro cuando está seleccionado */
-    border-color: #1565c0; /* Borde más oscuro al hacer hover */
-  }
-  
-  mat-button-toggle:focus {
-    outline: none; /* Elimina el borde de enfoque */
-    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.4); /* Resalta el botón al hacer foco */
-  }
-  
-  mat-card {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  }
-  
-  mat-card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  html {
-    height: 100%;
-  }
-  
-  body {
-    min-height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  ng-container {
-    width: 100%;
-    padding: 20px;
-    background-color: #f4f4f4; /* Fondo suave para los componentes */
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    margin-bottom: 20px;
-  }
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  div {
-    margin: 0 auto;
-    max-width: 1200px; /* Limitar el ancho máximo */
-    padding: 20px;
-  }
-  
-  mat-card, mat-button-toggle-group, ng-container {
-    margin-bottom: 20px; /* Separar los elementos entre sí */
-  }
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 0; /* Elimina el relleno predeterminado */
+  font-family: 'Arial', sans-serif; /* Establecer una fuente adecuada */
+  background-color: #f4f4f4; /* Fondo suave */
+}
+
+/* Contenedor principal que envuelve todo el contenido */
+main {
+  padding: 20px; /* Espacio interior alrededor del contenido */
+  margin: 0 auto; /* Centra el contenedor si es necesario */
+  max-width: 1200px; /* Establece un ancho máximo para el contenido */
+}
+
+/* Estilo adicional si deseas añadir espacio alrededor de un mat-button-toggle-group o cualquier otro elemento */
+mat-button-toggle-group {
+  display: flex; /* Usar Flexbox para la disposición */
+  flex-direction:column;
+  padding: 10px;
+  margin-bottom: 20px; /* Espacio abajo */
+  border-radius: 10px;
+  background-color: #ffffff; /* Fondo blanco para el contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+mat-button-toggle {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  border-radius: 50px; /* Bordes más redondeados */
+  background-color: #f1f1f1; /* Fondo neutro */
+  color: #333;
+  border: 2px solid #ccc; /* Borde más claro */
+  transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+mat-button-toggle:hover {
+  background-color: #dcdcdc; /* Fondo al pasar el mouse */
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+mat-button-toggle.mat-button-toggle-checked {
+  background-color: #2196f3; /* Fondo azul cuando está seleccionado */
+  color: white; /* Texto blanco cuando está seleccionado */
+  border-color: #1976d2; /* Borde azul más oscuro */
+}
+
+mat-button-toggle.mat-button-toggle-checked:hover {
+  background-color: #1976d2; /* Fondo más oscuro cuando está seleccionado */
+  border-color: #1565c0; /* Borde más oscuro al hacer hover */
+}
+
+mat-button-toggle:focus {
+  outline: none; /* Elimina el borde de enfoque */
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.4); /* Resalta el botón al hacer foco */
+}
+
+mat-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+ng-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #f4f4f4; /* Fondo suave para los componentes */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-bottom: 20px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+div {
+  margin: 0 auto;
+  max-width: 1200px; /* Limitar el ancho máximo */
+  padding: 20px;
+}
+
+mat-card, mat-button-toggle-group, ng-container {
+  margin-bottom: 20px; /* Separar los elementos entre sí */
+}

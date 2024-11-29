@@ -16,17 +16,17 @@
         <mat-button-toggle value="api-rest">
           Comentarios
         </mat-button-toggle>
-      </mat-button-toggle-group>
-      
-      <!-- Mostrar los componentes correspondientes dependiendo de la opción seleccionada -->
-      <ng-container *ngIf="selectedSegment === 'dueno'">
-        <app-dueno></app-dueno>
-      </ng-container>
-      <ng-container *ngIf="selectedSegment === 'estacionamiento'">
-        <app-estacionamiento></app-estacionamiento>
-      </ng-container>
-      <ng-container *ngIf="selectedSegment === 'api-rest'">
-        <app-api-rest></app-api-rest>
-      </ng-container>
-    </div>    
-  </html>
+    </mat-button-toggle-group>
+    <!-- Mostrar los componentes correspondientes dependiendo de la opción seleccionada -->
+    <ng-container *ngIf="selectedSegment === 'dueno'">
+      <app-dueno></app-dueno>
+    </ng-container>
+    <ng-container *ngIf="selectedSegment === 'estacionamiento'">
+      <app-estacionamiento></app-estacionamiento>
+    </ng-container>
+    <ng-container *ngIf="selectedSegment === 'api-rest'">
+      <app-api-rest></app-api-rest>
+    </ng-container>
+  </div> 
+     
+</html>
