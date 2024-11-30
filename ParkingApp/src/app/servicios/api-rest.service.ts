@@ -2,37 +2,36 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export interface User {
+export interface Comment {
   id: number;
-  name: string;
-  email: string;
-}
+  content: string;
+ }
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'http://localhost:3000/users'; // Ruta del JSON Server
+  private apiUrl = 'http://localhost:3000/comments'; // Ruta del JSON Server para comentarios
 
   constructor(private http: HttpClient) {}
 
-  // Obtener todos los usuarios
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
+  // Obtener todos los comentarios
+  getComments(): Observable<Comment[]> {
+    return this.http.get<Comment[]>(this.apiUrl);
   }
 
-  // Crear un nuevo usuario
-  createUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
+  // Crear un nuevo comentario
+  createComment(comment: Comment): Observable<Comment> {
+    return this.http.post<Comment>(this.apiUrl, comment);
   }
 
-  // Actualizar un usuario
-  updateUser(updatedUser: User): Observable<User> {
-    return this.http.put<User>(`${this.apiUrl}/${updatedUser.id}`, updatedUser);
+  // Actualizar un comentario
+  updateComment(updatedComment: Comment): Observable<Comment> {
+    return this.http.put<Comment>(`${this.apiUrl}/${updatedComment.id}`, updatedComment);
   }
 
-  // Eliminar un usuario por ID
-  deleteUser(id: number): Observable<void> {
+  // Eliminar un comentario por ID
+  deleteComment(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

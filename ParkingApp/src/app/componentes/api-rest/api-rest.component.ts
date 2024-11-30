@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService} from '../../servicios/api-rest.service';
+import { DataService, Comment} from '../../servicios/api-rest.service';
 
 export interface User {
   id: number;
@@ -15,77 +15,36 @@ export interface User {
   styleUrls: ['./api-rest.component.css']
 })
 export class ApiRestComponent implements OnInit {
-  users: User[] = [];
-  newUser: User = { id: 0, name: '', email: '', comment: '' }; // Incluye comentario
-  editingUser: User | null = null;
+  comments: Comment[] = [];  // Lista para almacenar los comentarios
+  newComment: Comment = { id: 0, content: '' };  // Para el nuevo comentario
 
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.loadUsers();
+    this.loadComments();  // Cargar los comentarios cuando el componente se inicializa
   }
 
-  loadUsers() {
-    this.dataService.getUsers().subscribe((users) => {
-      this.users = users;
+  // Función para cargar los comentarios
+  loadComments() {
+    this.dataService.getComments().subscribe((comments) => {
+      this.comments = comments;  // Asigna los comentarios obtenidos al array de comentarios
     });
   }
 
-  addUser() {
-    if (!this.newUser.name || !this.newUser.email) return;
+  // Función para agregar un nuevo comentario
+  addComment() {
+    if (!this.newComment.content) return;  // Validación básica para asegurar que el comentario no esté vacío
 
-    const newUser: User = {
-      id: this.users.length > 0 ? Math.max(...this.users.map(u => u.id)) + 1 : 1,
-      name: this.newUser.name,
-      email: this.newUser.email,
-      comment: this.newUser.comment // Captura el comentario
+    // Asignamos un ID único para el nuevo comentario
+    const newComment: Comment = {
+      id: this.comments.length > 0 ? Math.max(...this.comments.map(c => c.id)) + 1 : 1,
+      content: this.newComment.content,
     };
 
-    this.dataService.createUser(newUser).subscribe((user) => {
-      this.users.push(user);
-      this.resetForm();
+    // Llamamos al servicio para agregar el nuevo comentario
+    this.dataService.createComment(newComment).subscribe((comment) => {
+      this.comments.push(comment);  // Agrega el comentario a la lista
+      this.newComment = { id: 0, content: '' };  // Resetea el formulario
     });
-  }
-
-  updateUser(user: User) {
-    this.editingUser = user;
-    this.newUser.name = user.name;
-    this.newUser.email = user.email;
-    this.newUser.comment = user.comment || ''; // Carga el comentario en el formulario
-  }
-
-  saveUser() {
-    if (!this.editingUser) return;
-
-    const updatedUser: User = {
-      id: this.editingUser.id,
-      name: this.newUser.name,
-      email: this.newUser.email,
-      comment: this.newUser.comment // Guarda el comentario actualizado
-    };
-
-    this.dataService.updateUser(updatedUser).subscribe((user) => {
-      const index = this.users.findIndex(u => u.id === user.id);
-      if (index !== -1) {
-        this.users[index] = user;
-      }
-      this.resetForm();
-      this.editingUser = null;
-    }, (error) => {
-      console.error("Error al actualizar al usuario:", error);
-    });
-  }
-
-  deleteUser(userId: number) {
-    this.dataService.deleteUser(userId).subscribe(() => {
-      this.users = this.users.filter(user => user.id !== userId);
-    }, (error) => {
-      console.error("Error al eliminar el usuario:", error);
-    });
-  }
-
-  resetForm() {
-    this.newUser = { id: 0, name: '', email: '', comment: '' };
-    this.editingUser = null;
   }
 }

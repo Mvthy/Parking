@@ -1,38 +1,40 @@
-<html>
-  <mat-toolbar color="primary">
-    <h2>Agrega tu comentario</h2>
-  </mat-toolbar>
+<mat-toolbar color="primary">
+  <h2>Lista de Comentarios</h2>
+</mat-toolbar>
 
-  <form (ngSubmit)="editingUser ? saveUser() : addUser()">
-    <mat-form-field appearance="fill">
-      <mat-label>Nombre</mat-label>
-      <input matInput [(ngModel)]="newUser.name" name="name" required>
-    </mat-form-field>
+<!-- Formulario para agregar un nuevo comentario -->
+<form (ngSubmit)="addComment()">
+  <mat-form-field appearance="fill">
+    <mat-label>Comentario</mat-label>
+    <textarea matInput [(ngModel)]="newComment.content" name="content" required></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" type="submit">
+    Agregar nuevo comentario
+  </button>
   
-    <mat-form-field appearance="fill">
-      <mat-label>Comentario</mat-label>
-      <textarea matInput [(ngModel)]="newUser.comment" name="comment"></textarea>
-    </mat-form-field>
-  
-    <button mat-raised-button color="accent" type="submit">
-      {{ editingUser ? 'Guardar Cambios' : 'Enviar comentario' }}
-    </button>
-  </form>
-  
-  <mat-list>
-    <mat-list-item *ngFor="let user of users">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>{{ user.name }}</mat-card-title>
-          <p>ID: {{ user.id }}</p>
-          <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
-          <p>Comentario: {{ user.comment }}</p>
-          <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="updateUser(user)">Actualizar</button>
-            <button mat-raised-button color="warn" (click)="deleteUser(user.id)">Eliminar</button>
-          </mat-card-actions>
-        </mat-card-header>
-      </mat-card>
-    </mat-list-item>
-  </mat-list>
-</html>
+  <!-- Botón para cargar los comentarios -->
+  <button mat-raised-button color="primary" (click)="loadComments()">
+    Cargar Comentarios
+  </button>
+</form>
+
+<br>
+
+
+<br><br>
+
+<!-- Lista de comentarios -->
+<mat-list>
+  <mat-list-item *ngFor="let comment of comments">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ comment.content }}</mat-card-title>
+        <p>ID: {{ comment.id }}</p>
+      </mat-card-header>
+      <mat-card-actions>
+        <!-- Aquí podrían ir otros botones si fuera necesario, como 'Actualizar' o 'Eliminar' -->
+      </mat-card-actions>
+    </mat-card>
+  </mat-list-item>
+</mat-list>

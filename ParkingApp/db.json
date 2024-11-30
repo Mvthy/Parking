@@ -1,1 +1,16 @@
-{}
+{
+  "comments": [
+    {
+      "id": "1",
+      "content": "Este es un comentario de ejemplo."
+    },
+    {
+      "id": "2",
+      "content": "Otro comentario aquí."
+    },
+    {
+      "id": 3,
+      "content": "prueba 31"
+    }
+  ]
+}
