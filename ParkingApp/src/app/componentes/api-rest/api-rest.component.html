@@ -4,37 +4,35 @@
 
 <!-- Formulario para agregar un nuevo comentario -->
 <form (ngSubmit)="addComment()">
+  <!-- Input para el nombre -->
   <mat-form-field appearance="fill">
-    <mat-label>Comentario</mat-label>
-    <textarea matInput [(ngModel)]="newComment.content" name="content" required></textarea>
+    <mat-label>Nombre</mat-label>
+    <textarea matInput placeholder="Ingresa tu nombre" [(ngModel)]="newComment.name" name="name" required></textarea>
   </mat-form-field>
 
+  <!-- input para el comentario -->
+  <mat-form-field appearance="fill">
+    <mat-label>Comentario</mat-label>
+    <textarea matInput placeholder="Escribe tu comentario" [(ngModel)]="newComment.content" name="content" maxlength="{{ maxCharacters }}"  required></textarea>
+    <!-- Contador de caracteres -->
+    <mat-hint align="end">{{ newComment.content.length || 0 }} / {{ maxCharacters }}</mat-hint>
+  </mat-form-field>
+
+  <!-- Botónes -->
   <button mat-raised-button color="accent" type="submit">
     Agregar nuevo comentario
   </button>
   
-  <!-- Botón para cargar los comentarios -->
-  <button mat-raised-button color="primary" (click)="loadComments()">
-    Cargar Comentarios
-  </button>
 </form>
 
-<br>
-
-
-<br><br>
+<hr><h3>Lista de comentarios</h3><hr>
 
 <!-- Lista de comentarios -->
 <mat-list>
   <mat-list-item *ngFor="let comment of comments">
     <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{ comment.content }}</mat-card-title>
-        <p>ID: {{ comment.id }}</p>
-      </mat-card-header>
-      <mat-card-actions>
-        <!-- Aquí podrían ir otros botones si fuera necesario, como 'Actualizar' o 'Eliminar' -->
-      </mat-card-actions>
+      <mat-card-subtitle>{{ comment.name }}</mat-card-subtitle>
+      <mat-card-content>{{ comment.content }}</mat-card-content>
     </mat-card>
   </mat-list-item>
 </mat-list>
