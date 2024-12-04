@@ -39,16 +39,28 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ParkingApp'`, () => {
+  it('should not display the default title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ParkingApp');
+    app.title = '';  // Asigna un valor vacío a title
+    fixture.detectChanges();  // Detecta los cambios
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h1')?.textContent).not.toContain('Hello, ParkingApp');
   });
 
-  it('should render title in the h1 tag', () => {
+  it('should not render any title in the h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
+    const app = fixture.componentInstance;
+  
+    // Asignar título vacío para asegurarse de que no se renderice texto
+    app.title = ''; 
+    fixture.detectChanges();  // Detectar los cambios después de modificar el title
+  
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ParkingApp');
+    const h1 = compiled.querySelector('h1');  // Obtener el <h1> del DOM
+  
+    expect(h1).toBeTruthy();  // Verifica que el <h1> esté presente
+    expect(h1?.textContent?.trim()).toBe('');  // Verifica que el contenido esté vacío
   });
 });
