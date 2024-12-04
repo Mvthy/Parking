@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 
 export interface Comment {
   id: number;
-  name: string;
   content: string;
  }
 
@@ -26,5 +25,13 @@ export class DataService {
     return this.http.post<Comment>(this.apiUrl, comment);
   }
 
+  // Actualizar un comentario
+  updateComment(updatedComment: Comment): Observable<Comment> {
+    return this.http.put<Comment>(`${this.apiUrl}/${updatedComment.id}`, updatedComment);
+  }
 
+  // Eliminar un comentario por ID
+  deleteComment(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }
