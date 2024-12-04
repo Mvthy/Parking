@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { DuenoComponent } from './dueno.component';
 
 describe('DuenoComponent', () => {
@@ -8,7 +8,8 @@ describe('DuenoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DuenoComponent]
+      declarations: [DuenoComponent],
+      imports: [MatToolbarModule],
     })
     .compileComponents();
 

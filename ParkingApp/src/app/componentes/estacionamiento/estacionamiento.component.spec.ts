@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { EstacionamientoComponent } from './estacionamiento.component';
 
 describe('EstacionamientoComponent', () => {
@@ -8,7 +8,8 @@ describe('EstacionamientoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EstacionamientoComponent]
+      declarations: [EstacionamientoComponent],
+      imports: [MatToolbarModule],
     })
     .compileComponents();
 
