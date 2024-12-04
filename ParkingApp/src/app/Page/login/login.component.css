@@ -1,65 +1,63 @@
-.example-form {
-    min-width: 150px;
-    max-width: 300px;
-    width: 63%;
-  }
-  
-  .example-full-width {
-    width: 50%;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-  /* home.component.css */
-.title-container {
-    margin-top: 35%;
-    text-align: center;
-  }
-  
-  .title-container h1 {
-    margin: 0;
-  }
-  
-  .title-container h2 {
-    margin: 0;
-    color: gray; /* Cambia el color si lo deseas */
-  }
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
-  /* home.component.css o styles.css */
-.example-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px; /* Espacio entre los campos del formulario */
-    max-width: 600px; /* Ancho máximo del formulario */
-    margin: 0 auto; /* Centra el formulario horizontalmente */
-    padding: 20px; /* Espacio interno opcional */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-    background-color: #fff; /* Fondo opcional */
-    border-radius: 8px; /* Bordes redondeados opcional */
-  }
-  
-  .example-full-width {
-    width: 100%; /* Asegura que los campos del formulario ocupen el ancho completo */
-  }
+/* Centrado del contenedor principal con margen */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-  /* home.component.css o styles.css */
-.signup-link {
-    margin-top: 16px;
-    text-align: center;
-  }
-  
-  .signup-link a {
-    color: #007bff; /* Azul para el enlace */
-    text-decoration: none;
-  }
-  
-  .signup-link a:hover {
-    text-decoration: underline;
-  }
-  
-  button {
-    margin-left: 13%;
-    width: 200px;
-  }
+/* Estilos de la tarjeta de login */
+mat-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
 
-  .example-label {
-    margin-left: 23%;
-  }
+mat-card-title {
+  font-size: 34px; /* Tamaño del título */
+  font-weight: bold; /* Negrita */
+  margin-top: 20px; /* Espacio arriba del título */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  text-align: center; /* Centrar el texto */
+  margin-bottom: 20px;
+}
+
+
+/* Estilos de los elementos del formulario */
+mat-form-field {
+  width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+}
+
+/*----------Botones----------*/
+.iniciar-button {
+  margin-top: 20px;
+  width: 100%; /* Botón ocupa todo el ancho */
+  font-size: 18px; /* Tamaño de texto en el botón */
+  text-align: center; /* Centrar el texto */
+}
+
+.otros-button {
+  width: 50%; /* Botón ocupa todo el ancho */
+  margin-top: 80px; /* Espacio encima del botón */
+  font-size: 18px; /* Tamaño de texto en el botón */
+  text-align: center; /* Centrar el texto */
+  padding: 25px 0;
+}
+
+/*----------Imagen----------*/
+.logo {
+  width: 150px; /* Cambia este valor según el tamaño que desees */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Para que no haya espacio adicional debajo de la imagen */
+  margin: auto; /* Centra la imagen si es necesario */
+}

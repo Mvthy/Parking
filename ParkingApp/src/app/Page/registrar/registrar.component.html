@@ -1,38 +1,32 @@
-<div class="title-container">
-    <h1>Registro</h1>
-  </div>
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="container">
+      <mat-card> 
+        <!-- imagen -->
+        <img src="Logo.png" alt="Logo" class="logo">
+        <mat-card-content>
+          <mat-card-title>Registro de Usuario</mat-card-title>
+        
+          <!-- Correo Electrónico -->
+          <mat-form-field appearance="fill">
+            <mat-label>Correo Electrónico</mat-label>
+            <input matInput [(ngModel)]="email" type="email" placeholder="Introduce tu correo" required>
+          </mat-form-field>
 
-<form class="example-form">
+          <!-- Contraseña -->
+          <mat-form-field appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" placeholder="Introduce una contraseña" [(ngModel)]="password" name="clave" required>
+          </mat-form-field>
 
-    <mat-form-field class="Nombre">
-      <mat-label>Nombre</mat-label>
-      <input matInput type="name" name="name">
-    </mat-form-field>
-  
-    <mat-form-field class="User">
-        <mat-label>Usuario</mat-label>
-        <input matInput type="user" name="user">
-      </mat-form-field>
+          <!-- Botón de Registro -->
+          <button mat-raised-button (click)="addUser()">Agregar Usuario</button>
 
-    <mat-form-field class="Email">
-      <mat-label>Correo electronico</mat-label>
-      <input matInput type="email" name="email">
-    </mat-form-field>
-
-    <mat-form-field class="Password">
-        <mat-label>Contraseña</mat-label>
-        <input matInput type="password" name="password">
-      </mat-form-field>
-
-    <mat-form-field class="validatePassword">
-      <mat-label>Confirmar contraseña</mat-label>
-      <input matInput type="validatePassword" name="validatePassword">
-    </mat-form-field> 
-    
-    <div class="mat-flat-button">
-        <button mat-flat-button routerLink="/login">Registrarse</button>
+          <!-- Botón de redirección a Login -->
+          <button mat-raised-button (click)="login()">Volver</button>
+        </mat-card-content>
+      </mat-card>
     </div>
-
-</form>
-
-
+  </body>
+</html>

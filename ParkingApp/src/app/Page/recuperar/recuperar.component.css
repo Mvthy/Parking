@@ -1,65 +1,90 @@
-.example-form {
-    min-width: 150px;
-    max-width: 300px;
-    width: 63%;
-  }
-  
-  .example-full-width {
-    width: 50%;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* ------------------ */
+  body {
+    font-family: 'Roboto', sans-serif;
   }
 
-  /* home.component.css */
-.title-container {
-    margin-top: 35%;
-    text-align: center;
-  }
-  
-  .title-container h1 {
-    margin: 0;
-  }
-  
-  .title-container h2 {
-    margin: 0;
-    color: gray; /* Cambia el color si lo deseas */
-  }
-
-  /* home.component.css o styles.css */
-.example-form {
+  /* Centrado del contenedor principal con margen */
+  .container {
     display: flex;
-    flex-direction: column;
-    gap: 16px; /* Espacio entre los campos del formulario */
-    max-width: 600px; /* Ancho máximo del formulario */
-    margin: 0 auto; /* Centra el formulario horizontalmente */
-    padding: 20px; /* Espacio interno opcional */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-    background-color: #fff; /* Fondo opcional */
-    border-radius: 8px; /* Bordes redondeados opcional */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
   }
   
-  .example-full-width {
-    width: 100%; /* Asegura que los campos del formulario ocupen el ancho completo */
+  /* Estilos de la tarjeta de login */
+  mat-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+  }
+  
+  mat-card-title {
+    font-size: 34px; /* Tamaño del título */
+    font-weight: bold; /* Negrita */
+    margin-top: 20px; /* Espacio arriba del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px;
+  }
+  
+  
+  /* Estilos de los elementos del formulario */
+  mat-form-field {
+    width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
   }
 
-  /* home.component.css o styles.css */
-.signup-link {
-    margin-top: 16px;
+
+    /*----------Botones----------*/
+
+    .otros-button {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 18px;
     text-align: center;
-  }
-  
-  .signup-link a {
-    color: #007bff; /* Azul para el enlace */
-    text-decoration: none;
-  }
-  
-  .signup-link a:hover {
-    text-decoration: underline;
-  }
-  
-  button {
-    margin-left: 13%;
-    width: 200px;
-  }
+}
 
-  .example-label {
-    margin-left: 23%;
-  }
+/*----------Imagen----------*/
+.logo {
+  width: 150px; /* Cambia este valor según el tamaño que desees */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Para que no haya espacio adicional debajo de la imagen */
+  margin: auto; /* Centra la imagen si es necesario */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+mat-card {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+}
+.logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: 80px;
+}
+.input-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.message {
+  display: flex;
+  align-items: center;
+  color: #f44336; /* Color de texto de error */
+  font-size: 0.875em;
+  margin-top: 8px;
+}
+.message mat-icon {
+  margin-right: 5px;
+}

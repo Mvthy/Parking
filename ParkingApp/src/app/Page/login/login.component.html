@@ -1,53 +1,67 @@
-<!-- home.component.html -->
-<div class="title-container">
-    <h1>Login</h1>
-  </div>
-  
-  <form class="example-form">
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="container">
+      <mat-card> 
+        <!-- imagen -->
+        <img src="Logo.png" alt="Logo" class="logo">
 
-    <!-- Input de usuario -->
-    <mat-form-field appearance="fill">
-      <mat-label>Usuario</mat-label>
-      <input matInput [(ngModel)]="usuario" name="usuario" required />
-    </mat-form-field>
-   
-    <!-- Validación para el input de usuario en blanco -->
-    <p *ngIf="attemptedLogin && !usuario" style="color: rgba(255, 0, 0, 0.632);">
-      Usuario es obligatorio.
-    </p>
+        <form (ngSubmit)="login()">
+          <mat-card-content>
+            <mat-card-title>Iniciar sesión</mat-card-title>
     
-    <!-- Input de clave -->
-    <mat-form-field appearance="fill">
-      <mat-label>Contraseña</mat-label>
-      <input matInput  [(ngModel)]="clave" name="clave" type="password" required />
-    </mat-form-field>
-    
-    <!-- Validación para el input de clave en blanco -->
-    <p *ngIf="attemptedLogin && !clave" style="color: rgba(255, 0, 0, 0.632);">
-      Clave es requerida.
-    </p>
-    
-    <!-- Validación para el input de clave con un mínimo 6 caracteres -->
-    <p *ngIf="attemptedLogin && clave.length < 6" style="color: rgba(255, 0, 0, 0.632);">
-      La clave debe tener al menos 6 caracteres.
-    </p>
+            <!-- Input de usuario -->
+            <mat-form-field appearance="fill">
+              <mat-label><mat-icon>person</mat-icon> Usuario</mat-label>
+              <input matInput type="text" [(ngModel)]="usuario" name="usuario" placeholder="Introduce tu nombre de usuario" required />
+                <!-- Validación para el input de usuario en blanco -->
+                <mat-error *ngIf="errors.includes('Usuario es reqerido')" style="color: rgba(255, 0, 0, 0.632);"> 
+                  Usuario es requerido
+                </mat-error>
+            </mat-form-field>
+            <br>
 
-    <!-- Botón para iniciar sesión -->
-    <button mat-raised-button color="primary" (click)="login()">Iniciar Sesión</button>
+            <!-- Input de clave -->
+            <mat-form-field appearance="fill">
+              <mat-label><mat-icon>lock</mat-icon> Contraseña</mat-label>
+              <input matInput type="password" [(ngModel)]="clave" name="clave" placeholder="Introduce tu contraseña" required minlength="6"/>
+                <!-- Validación para el input de clave en blanco -->
+                <mat-error *ngIf="errors.includes('Clave es requerida')" style="color: rgba(255, 0, 0, 0.632);">
+                  Clave es requerida
+                </mat-error>
+                <!-- Validación para el input de clave con un mínimo 6 caracteres -->
+                <mat-error *ngIf="errors.includes('La clave debe contener más de 6 carácteres')" style="color: rgba(255, 0, 0, 0.632);">
+                  La clave debe contener más de 6 carácteres
+                </mat-error>
+            </mat-form-field>
+            
+            <!-- Selector de tipo de usuario (si aplica) -->
+            <mat-form-field appearance="fill" *ngIf="mostrarSelector">
+              <mat-label>Seleccionar tipo de usuario</mat-label>
+              <mat-select [(value)]="tipoUsuario">
+                <mat-option value="arrendador">Arrendador</mat-option>
+                <mat-option value="dueno">Dueño</mat-option>
+                <mat-option value="administrador">Administrador</mat-option>
+              </mat-select>
+              <mat-error *ngIf="errors.includes('Seleccione un tipo de usuario')" style="color: rgba(255, 0, 0, 0.632);">
+                Seleccione un tipo de usuario
+              </mat-error>
+            </mat-form-field>
+            
 
-    <!-- Botón para registrar usuario -->
-    <div class="example-label">¿No tienes cuenta?</div>
-    <div class="example-button-row">
-      <button mat-stroked-button routerLink="/registrar">Registrate aquí</button>
+            <!-- Botones -->
+            <section>
+              <div class="button-container">
+                <div class="button-row">
+                  <button mat-raised-button class="iniciar-button" color="primary" (click)="login()">Iniciar Sesión</button>
+                  <button mat-raised-button class="otros-button" (click)="registrar()">Registrar usuario</button>
+                  <button mat-raised-button class="otros-button" (click)="recuperar()">Recuperar contraseña</button>
+                </div>
+              </div>
+            </section>
+          </mat-card-content>
+        </form>
+      </mat-card>
     </div>
-
-    <!-- Enlace Recuperar contraseña -->
-    <div class="signup-link">
-      <p>¿Olvidaste tu contraseña?</p>
-      <p>Click <a routerLink="/recuperar">aquí</a></p>
-    </div>
-    
-  </form>
-  
-  
-  
+  </body>
+</html>

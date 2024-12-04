@@ -1,0 +1,98 @@
+/* Estilo general para el contenedor de asientos */
+.seats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  /* Estilo para cada fila de asientos */
+  .seats > div {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+  }
+  
+  /* Estilo para cada botón de asiento */
+  .seats button {
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Alto del botón */
+    margin: 0 5px; /* Espacio entre botones */
+    font-size: 16px; /* Tamaño de texto */
+    border: 1px solid #ccc; /* Borde del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+  }
+  
+  /* Estilos para los diferentes estados de los asientos */
+  button.available {
+    background-color: #28a745; /* Verde para asientos disponibles */
+    color: white;
+  }
+  
+  button.occupied {
+    background-color: #dc3545; /* Rojo para asientos ocupados */
+    color: white;
+    cursor: not-allowed; /* Cursor deshabilitado para asientos ocupados */
+  }
+  
+  button.selected {
+    background-color: #007bff; /* Azul para asientos seleccionados */
+    color: white;
+  }
+  
+  /* Estilos para la leyenda de asientos */
+  .legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Estilo para cada elemento de la leyenda */
+  .legend-item {
+    display: flex;
+    align-items: center; /* Centrar verticalmente el texto y el color */
+    margin: 0 15px; /* Espacio entre las leyendas */
+    font-size: 14px; /* Tamaño de texto para la leyenda */
+  }
+  
+  .legend-item div {
+    width: 20px; /* Ancho del color de estado */
+    height: 20px; /* Alto del color de estado */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-right: 8px; /* Espacio entre el color y el texto */
+  }
+  
+  /* Colores para la leyenda */
+  .legend-item.available div {
+    background-color: #28a745; /* Verde para Disponible */
+  }
+  
+  .legend-item.occupied div {
+    background-color: #dc3545; /* Rojo para Ocupado */
+  }
+  
+  .legend-item.selected div {
+    background-color: #007bff; /* Azul para Seleccionado */
+  }
+  .reservation-message {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #28a745; /* Verde para éxito */
+    color: white;
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center;
+  }
+  
+  mat-toolbar {
+    background-color: #1976d2; /* Color primario */
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    h2 {
+      margin: 0;
+    }
+  }
