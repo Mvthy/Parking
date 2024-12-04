@@ -7,13 +7,13 @@ import { ApiRestComponent } from '../../componentes/api-rest/api-rest.component'
 import { DuenoComponent } from '../../componentes/dueno/dueno.component';
 import { EstacionamientoComponent } from '../../componentes/estacionamiento/estacionamiento.component';
 
-// Librerías de Angular Material
+//Líbrerías de Angular Material
 import { FormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -22,8 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { QRCodeModule } from 'angularx-qrcode'; // Nueva biblioteca para generar QR
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
-// Importar el módulo para animaciones
+// Este import no tengo idea porque causa error
+// pero parece que daña el router
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -35,7 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule,  // Asegúrate de agregar esto para las animaciones
+    
 
     // Angular Material
     MatListModule,
@@ -50,6 +53,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     QRCodeModule, // Módulo para generar códigos QR
     ZXingScannerModule // Módulo para escanear códigos QR
+
   ],
   exports: [
     ApiRestComponent,
@@ -69,7 +73,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     QRCodeModule,
     ZXingScannerModule,
     FormsModule,
-    BrowserAnimationsModule // También exportado si otros módulos lo requieren
   ]
 })
 export class SharedModule { }
