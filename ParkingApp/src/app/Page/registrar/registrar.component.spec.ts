@@ -6,6 +6,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { environment } from '../../../environments/environment';
 import { HttpClientTestingModule } from '@angular/common/http/testing';  // Para pruebas HTTP
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('RegistrarComponent', () => {
   let component: RegistrarComponent;
@@ -18,6 +19,7 @@ describe('RegistrarComponent', () => {
         SharedModule,  // Importa SharedModule que contiene Angular Material
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireAuthModule,
+        NoopAnimationsModule,
         HttpClientTestingModule  // Importa HttpClientTestingModule para pruebas HTTP
       ],
       providers: [

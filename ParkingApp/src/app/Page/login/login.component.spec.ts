@@ -6,6 +6,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { environment } from '../../../environments/environment';
 import { HttpClientTestingModule } from '@angular/common/http/testing';  // Para pruebas HTTP
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -18,7 +19,8 @@ describe('LoginComponent', () => {
         SharedModule,  // Importa SharedModule que contiene Angular Material
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireAuthModule,
-        HttpClientTestingModule  // Importa HttpClientTestingModule para pruebas HTTP
+        HttpClientTestingModule,  // Importa HttpClientTestingModule para pruebas HTTP
+        BrowserAnimationsModule
       ],
       providers: [
         {
