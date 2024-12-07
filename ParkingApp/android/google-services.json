@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "403721226363",
+    "project_id": "highbridge-c4d5e",
+    "storage_bucket": "highbridge-c4d5e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403721226363:android:c72db0f91a4a79a0b37ade",
+        "android_client_info": {
+          "package_name": "com.highbridge.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB01O-TRPBw6_JWLDYH9kWaUOpWeC7OeEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403721226363:android:00cbe2f016da4c87b37ade",
+        "android_client_info": {
+          "package_name": "com.parking.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB01O-TRPBw6_JWLDYH9kWaUOpWeC7OeEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
